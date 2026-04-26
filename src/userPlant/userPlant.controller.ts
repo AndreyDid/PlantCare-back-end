@@ -13,7 +13,7 @@ import {
 import { UserPlantService } from './userPlant.service'
 import { Auth } from 'src/auth/decorators/auth.decorator'
 import { CurrentUser } from 'src/auth/decorators/user.decorator'
-import { UserPlantDto } from './dto/create-userPlant.dto'
+import { UserPlantDto } from './dto/userPlant.dto'
 
 @Controller('user/plants')
 export class UserPlantController {
@@ -23,6 +23,12 @@ export class UserPlantController {
   @Auth()
   async getAll(@CurrentUser('id') userId: string) {
     return this.userPlantService.getAll(userId)
+  }
+
+  @Get(':id')
+  @Auth()
+  async getById(@Param('id') id: string, @CurrentUser('id') userId: string) {
+    return this.userPlantService.getById(id, userId)
   }
 
   @UsePipes(new ValidationPipe())

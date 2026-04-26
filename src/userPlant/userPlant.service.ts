@@ -14,10 +14,11 @@ export class UserPlantService {
     })
   }
 
-  async getById(id: string) {
-    return this.prisma.user.findUnique({
+  async getById(id: string, userId: string) {
+    return this.prisma.userPlant.findFirst({
       where: {
-        id
+        id,
+        userId
       }
     })
   }
