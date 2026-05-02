@@ -8,6 +8,106 @@ import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 export class UserPlantService {
   constructor(private prisma: PrismaService) {}
 
+  private getPositiveNumber(value?: number | null) {
+    return value && value > 0 ? value : null
+  }
+
+  private getSeasonByDate(date: Date) {
+    const month = date.getUTCMonth()
+
+    if (month >= 2 && month <= 4) return 'spring'
+    if (month >= 5 && month <= 7) return 'summer'
+    if (month >= 8 && month <= 10) return 'autumn'
+
+    return 'winter'
+  }
+
+  private getSeasonalWateringIntervalDays(
+    date: Date,
+    plant: Pick<
+      Prisma.UserPlantUncheckedUpdateInput,
+      | 'wateringIntervalDays'
+      | 'wateringIntervalSpringDays'
+      | 'wateringIntervalSummerDays'
+      | 'wateringIntervalAutumnDays'
+      | 'wateringIntervalWinterDays'
+    >
+  ) {
+    const season = this.getSeasonByDate(date)
+    const baseInterval = this.getPositiveNumber(
+      plant.wateringIntervalDays as number | null
+    )
+
+    if (season === 'spring') {
+      return (
+        this.getPositiveNumber(
+          plant.wateringIntervalSpringDays as number | null
+        ) ?? baseInterval
+      )
+    }
+
+    if (season === 'summer') {
+      return (
+        this.getPositiveNumber(
+          plant.wateringIntervalSummerDays as number | null
+        ) ?? baseInterval
+      )
+    }
+
+    if (season === 'autumn') {
+      return (
+        this.getPositiveNumber(
+          plant.wateringIntervalAutumnDays as number | null
+        ) ?? baseInterval
+      )
+    }
+
+    return (
+      this.getPositiveNumber(plant.wateringIntervalWinterDays as number | null) ??
+      baseInterval
+    )
+  }
+
+  private addDays(date: Date, days: number) {
+    const nextDate = new Date(date)
+
+    nextDate.setUTCDate(nextDate.getUTCDate() + days)
+
+    return nextDate
+  }
+
+  private getNextWateringDate(
+    wateredAt: Date,
+    plant: {
+      lastWateredAt: Date | null
+      nextWateringAt: Date | null
+      wateringIntervalDays: number | null
+      wateringIntervalSpringDays: number | null
+      wateringIntervalSummerDays: number | null
+      wateringIntervalAutumnDays: number | null
+      wateringIntervalWinterDays: number | null
+    }
+  ) {
+    const intervalDays = this.getSeasonalWateringIntervalDays(wateredAt, plant)
+
+    if (intervalDays) return this.addDays(wateredAt, intervalDays)
+
+    if (!plant.nextWateringAt) return null
+
+    if (!plant.lastWateredAt) {
+      return plant.nextWateringAt > wateredAt ? plant.nextWateringAt : null
+    }
+
+    if (plant.nextWateringAt <= plant.lastWateredAt) {
+      return plant.nextWateringAt > wateredAt ? plant.nextWateringAt : null
+    }
+
+    return new Date(
+      wateredAt.getTime() +
+        (plant.nextWateringAt.getTime() - plant.lastWateredAt.getTime())
+    )
+  }
+
   async getAll(userId: string) {
     return this.prisma.userPlant.findMany({
       where: {
@@ -23,6 +123,31 @@ export class UserPlantService {
         userId
       }
     })
+  }
+
+  async waterAll(userId: string) {
+    const wateredAt = new Date()
+    const plants = await this.prisma.userPlant.findMany({
+      where: {
+        userId
+      }
+    })
+
+    if (!plants.length) return []
+
+    return this.prisma.$transaction(
+      plants.map(plant =>
+        this.prisma.userPlant.update({
+          where: {
+            id: plant.id
+          },
+          data: {
+            lastWateredAt: wateredAt,
+            nextWateringAt: this.getNextWateringDate(wateredAt, plant)
+          }
+        })
+      )
+    )
   }
 
   async create(dto: UserPlantDto, userId: string) {

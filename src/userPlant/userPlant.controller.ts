@@ -26,6 +26,13 @@ export class UserPlantController {
     return this.userPlantService.getAll(userId)
   }
 
+  @HttpCode(200)
+  @Post('water-all')
+  @Auth()
+  async waterAll(@CurrentUser('id') userId: string) {
+    return this.userPlantService.waterAll(userId)
+  }
+
   @Get(':id')
   @Auth()
   async getById(@Param('id') id: string, @CurrentUser('id') userId: string) {
