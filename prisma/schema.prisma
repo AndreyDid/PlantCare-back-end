@@ -13,30 +13,29 @@ datasource db {
 }
 
 model User {
-  id String @id @default(cuid())
+  id        String   @id @default(cuid())
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  email String @unique
-  name String?
+  email    String  @unique
+  name     String?
   password String
 
-   plants UserPlant[]
+  plants UserPlant[]
 
   @@map("users")
 }
 
-
 model PlantType {
   id String @id @default(cuid())
 
-  name String @unique
+  name      String  @unique
   latinName String?
 
-  light String?
+  light            String?
   wateringInterval Int? // дни
-  temperatureMin Int?
-  temperatureMax Int?
+  temperatureMin   Int?
+  temperatureMax   Int?
 
   description String?
 
@@ -50,37 +49,55 @@ model PlantType {
 model UserPlant {
   id String @id @default(cuid())
 
-  nickname String?
+  nickname  String?
   plantName String?
 
   photoUrl String?
 
   plantTypeId String?
-  plantType PlantType? @relation(fields: [plantTypeId], references: [id], onDelete: SetNull)
+  plantType   PlantType? @relation(fields: [plantTypeId], references: [id], onDelete: SetNull)
 
   userId String @map("user_id")
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  lastWateredAt DateTime?
-  nextWateringAt DateTime?
+  lastWateredAt              DateTime?
+  nextWateringAt             DateTime?
+  wateringIntervalDays       Int?
+  wateringIntervalSummerDays Int?
+  wateringIntervalWinterDays Int?
+  lightLevel                 String?
+  temperatureMin             Int?
+  temperatureMax             Int?
+  humidityMin                Int?
+  humidityMax                Int?
+  potType                    String?
+  potSize                    String?
+  soilType                   String?
+  lastRepottedAt             DateTime?
+  nextRepottingAt            DateTime?
+  wateringAmountMl           Int?
+  wateringNotes              String?
+  fertilizingIntervalDays    Int?
+  lastFertilizedAt           DateTime?
+  nextFertilizingAt          DateTime?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  wateringLogs WateringLog[]
-  reminders Reminder[]
+  wateringLogs   WateringLog[]
+  reminders      Reminder[]
   plantDiagnosis PlantDiagnosis[]
 
   @@index([userId])
   @@index([plantTypeId])
-
   @@map("user_plants")
 }
+
 model WateringLog {
   id String @id @default(cuid())
 
   plantId String
-  plant UserPlant @relation(fields: [plantId], references: [id], onDelete: Cascade)
+  plant   UserPlant @relation(fields: [plantId], references: [id], onDelete: Cascade)
 
   wateredAt DateTime @default(now())
 
@@ -93,9 +110,9 @@ model Reminder {
   id String @id @default(cuid())
 
   plantId String
-  plant UserPlant @relation(fields: [plantId], references: [id], onDelete: Cascade)
+  plant   UserPlant @relation(fields: [plantId], references: [id], onDelete: Cascade)
 
-  intervalDays Int
+  intervalDays  Int
   lastTriggered DateTime?
 
   createdAt DateTime @default(now())
@@ -107,10 +124,10 @@ model PlantDiagnosis {
   id String @id @default(cuid())
 
   plantId String
-  plant UserPlant @relation(fields: [plantId], references: [id], onDelete: Cascade)
+  plant   UserPlant @relation(fields: [plantId], references: [id], onDelete: Cascade)
 
   imageUrl String
-  result String?
+  result   String?
 
   createdAt DateTime @default(now())
 
