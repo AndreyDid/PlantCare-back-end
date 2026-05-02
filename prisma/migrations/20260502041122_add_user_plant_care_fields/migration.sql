@@ -1,0 +1,16 @@
+-- AlterTable
+ALTER TABLE "user_plants" ADD COLUMN     "fertilizingIntervalDays" INTEGER,
+ADD COLUMN     "humidityMax" INTEGER,
+ADD COLUMN     "humidityMin" INTEGER,
+ADD COLUMN     "lastFertilizedAt" TIMESTAMP(3),
+ADD COLUMN     "lastRepottedAt" TIMESTAMP(3),
+ADD COLUMN     "lightLevel" TEXT,
+ADD COLUMN     "nextFertilizingAt" TIMESTAMP(3),
+ADD COLUMN     "nextRepottingAt" TIMESTAMP(3),
+ADD COLUMN     "potSize" TEXT,
+ADD COLUMN     "potType" TEXT,
+ADD COLUMN     "soilType" TEXT,
+ADD COLUMN     "temperatureMax" INTEGER,
+ADD COLUMN     "temperatureMin" INTEGER,
+ADD COLUMN     "wateringAmountMl" INTEGER,
+ADD COLUMN     "wateringNotes" TEXT;
