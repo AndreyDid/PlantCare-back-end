@@ -22,6 +22,10 @@ export class UserPlantDto {
 
   @IsOptional()
   @IsString()
+  location?: string | null
+
+  @IsOptional()
+  @IsString()
   photoUrl?: string | null
 
   @IsOptional()
@@ -80,7 +84,17 @@ export class UserPlantDto {
   @IsOptional()
   @IsInt()
   @Min(1)
+  wateringIntervalSpringDays?: number | null // весенний интервал полива
+
+  @IsOptional()
+  @IsInt()
+  @Min(1)
   wateringIntervalSummerDays?: number | null // летний интервал полива
+
+  @IsOptional()
+  @IsInt()
+  @Min(1)
+  wateringIntervalAutumnDays?: number | null // осенний интервал полива
 
   @IsOptional()
   @IsInt()

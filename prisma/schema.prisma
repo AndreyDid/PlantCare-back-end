@@ -51,6 +51,7 @@ model UserPlant {
 
   nickname  String?
   plantName String?
+  location  String?
 
   photoUrl String?
 
@@ -63,7 +64,9 @@ model UserPlant {
   lastWateredAt              DateTime?
   nextWateringAt             DateTime?
   wateringIntervalDays       Int?
+  wateringIntervalSpringDays Int?
   wateringIntervalSummerDays Int?
+  wateringIntervalAutumnDays Int?
   wateringIntervalWinterDays Int?
   lightLevel                 String?
   temperatureMin             Int?

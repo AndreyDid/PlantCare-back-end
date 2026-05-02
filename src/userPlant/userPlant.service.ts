@@ -31,6 +31,7 @@ export class UserPlantService {
         plantName: dto.plantName,
         plantTypeId: dto.plantTypeId,
         nickname: dto.nickname,
+        location: dto.location,
         photoUrl: dto.photoUrl,
         lightLevel: dto.lightLevel,
         temperatureMin: dto.temperatureMin,
@@ -45,7 +46,9 @@ export class UserPlantService {
         lastWateredAt: dto.lastWateredAt,
         nextWateringAt: dto.nextWateringAt,
         wateringIntervalDays: dto.wateringIntervalDays,
+        wateringIntervalSpringDays: dto.wateringIntervalSpringDays,
         wateringIntervalSummerDays: dto.wateringIntervalSummerDays,
+        wateringIntervalAutumnDays: dto.wateringIntervalAutumnDays,
         wateringIntervalWinterDays: dto.wateringIntervalWinterDays,
         wateringAmountMl: dto.wateringAmountMl,
         wateringNotes: dto.wateringNotes,
@@ -67,13 +70,18 @@ export class UserPlantService {
     if ('plantName' in dto) data.plantName = dto.plantName
     if ('plantTypeId' in dto) data.plantTypeId = dto.plantTypeId
     if ('nickname' in dto) data.nickname = dto.nickname
+    if ('location' in dto) data.location = dto.location
     if ('photoUrl' in dto) data.photoUrl = dto.photoUrl
     if ('lastWateredAt' in dto) data.lastWateredAt = dto.lastWateredAt
     if ('nextWateringAt' in dto) data.nextWateringAt = dto.nextWateringAt
     if ('wateringIntervalDays' in dto)
       data.wateringIntervalDays = dto.wateringIntervalDays
+    if ('wateringIntervalSpringDays' in dto)
+      data.wateringIntervalSpringDays = dto.wateringIntervalSpringDays
     if ('wateringIntervalSummerDays' in dto)
       data.wateringIntervalSummerDays = dto.wateringIntervalSummerDays
+    if ('wateringIntervalAutumnDays' in dto)
+      data.wateringIntervalAutumnDays = dto.wateringIntervalAutumnDays
     if ('wateringIntervalWinterDays' in dto)
       data.wateringIntervalWinterDays = dto.wateringIntervalWinterDays
     if ('lightLevel' in dto) data.lightLevel = dto.lightLevel
