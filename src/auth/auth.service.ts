@@ -4,11 +4,12 @@ import {
   NotFoundException,
   UnauthorizedException
 } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 import { JwtService } from '@nestjs/jwt'
+import { verify } from 'argon2'
+import { type CookieOptions, Response } from 'express'
 import { UserService } from 'src/user/user.service'
 import { AuthDto } from './dto/auth.dto'
-import { verify } from 'argon2'
-import { Response } from 'express'
 
 @Injectable()
 export class AuthService {
@@ -17,7 +18,8 @@ export class AuthService {
 
   constructor(
     private jwt: JwtService,
-    private userService: UserService
+    private userService: UserService,
+    private configService: ConfigService
   ) {}
   async login(dto: AuthDto) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -79,22 +81,31 @@ export class AuthService {
   addRefreshTokenToResponse(res: Response, refreshToken: string) {
     const expiresIn = new Date()
     expiresIn.setDate(expiresIn.getDate() + this.EXPIRE_DAY_REFRESH_TOKEN)
-    res.cookie(this.REFRESH_TOKEN_NAME, refreshToken, {
-      httpOnly: true,
-      domain: 'localhost', // TO-DO для продакшена лучше другой домен из env
-      expires: expiresIn,
-      secure: true,
-      sameSite: 'none' // lax if production
-    })
+    res.cookie(
+      this.REFRESH_TOKEN_NAME,
+      refreshToken,
+      this.getRefreshTokenCookieOptions(expiresIn)
+    )
   }
 
   removeRefreshTokenToResponse(res: Response) {
-    res.cookie(this.REFRESH_TOKEN_NAME, '', {
+    res.cookie(
+      this.REFRESH_TOKEN_NAME,
+      '',
+      this.getRefreshTokenCookieOptions(new Date(0))
+    )
+  }
+
+  private getRefreshTokenCookieOptions(expires: Date): CookieOptions {
+    const isProduction = this.configService.get('NODE_ENV') === 'production'
+    const cookieDomain = this.configService.get<string>('COOKIE_DOMAIN')
+
+    return {
       httpOnly: true,
-      domain: 'localhost', // TO-DO для продакшена лучше другой домен из env
-      expires: new Date(0),
-      secure: true,
-      sameSite: 'none' // lax if production
-    })
+      expires,
+      secure: isProduction,
+      sameSite: isProduction ? 'none' : 'lax',
+      ...(cookieDomain ? { domain: cookieDomain } : {})
+    }
   }
 }
