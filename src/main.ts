@@ -3,6 +3,8 @@ import { AppModule } from './app.module'
 import cookieParser from 'cookie-parser'
 import { ConfigService } from '@nestjs/config'
 
+const normalizeOrigin = (origin: string) => origin.trim().replace(/\/$/, '')
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
   const configService = app.get(ConfigService)
@@ -10,14 +12,21 @@ async function bootstrap() {
     configService.get<string>('FRONTEND_URL') ?? 'http://localhost:3000'
   const corsOrigins = frontendUrl
     .split(',')
-    .map(origin => origin.trim())
+    .map(normalizeOrigin)
     .filter(Boolean)
 
   app.setGlobalPrefix('api')
 
   app.use(cookieParser())
   app.enableCors({
-    origin: corsOrigins,
+    origin: (origin, callback) => {
+      if (!origin || corsOrigins.includes(normalizeOrigin(origin))) {
+        callback(null, true)
+        return
+      }
+
+      callback(new Error(`Origin ${origin} is not allowed by CORS`))
+    },
     credentials: true,
     exposedHeaders: ['Set-Cookie']
   })
