@@ -108,27 +108,33 @@ export class UserPlantService {
     )
   }
 
-  async getAll(userId: string) {
-    return this.prisma.userPlant.findMany({
-      where: {
-        userId
-      }
-    })
+  private getDayRange(date = new Date()) {
+    const startOfToday = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate()
+    )
+    const startOfTomorrow = new Date(startOfToday)
+    const startOfDayAfterTomorrow = new Date(startOfToday)
+
+    startOfTomorrow.setDate(startOfTomorrow.getDate() + 1)
+    startOfDayAfterTomorrow.setDate(startOfDayAfterTomorrow.getDate() + 2)
+
+    return {
+      startOfToday,
+      startOfTomorrow,
+      startOfDayAfterTomorrow
+    }
   }
 
-  async getById(id: string, userId: string) {
-    return this.prisma.userPlant.findFirst({
-      where: {
-        id,
-        userId
-      }
-    })
-  }
-
-  async waterAll(userId: string) {
+  private async waterPlants(
+    userId: string,
+    where: Prisma.UserPlantWhereInput
+  ) {
     const wateredAt = new Date()
     const plants = await this.prisma.userPlant.findMany({
       where: {
+        ...where,
         userId
       }
     })
@@ -148,6 +154,84 @@ export class UserPlantService {
         })
       )
     )
+  }
+
+  async getAll(userId: string) {
+    return this.prisma.userPlant.findMany({
+      where: {
+        userId
+      }
+    })
+  }
+
+  async getById(id: string, userId: string) {
+    return this.prisma.userPlant.findFirst({
+      where: {
+        id,
+        userId
+      }
+    })
+  }
+
+  async getWateringOverview(userId: string) {
+    const { startOfTomorrow, startOfDayAfterTomorrow } = this.getDayRange()
+
+    const [dueToday, dueTomorrow] = await this.prisma.$transaction([
+      this.prisma.userPlant.findMany({
+        where: {
+          userId,
+          nextWateringAt: {
+            lt: startOfTomorrow
+          }
+        },
+        orderBy: {
+          nextWateringAt: 'asc'
+        }
+      }),
+      this.prisma.userPlant.findMany({
+        where: {
+          userId,
+          nextWateringAt: {
+            gte: startOfTomorrow,
+            lt: startOfDayAfterTomorrow
+          }
+        },
+        orderBy: {
+          nextWateringAt: 'asc'
+        }
+      })
+    ])
+
+    return {
+      dueToday,
+      dueTomorrow
+    }
+  }
+
+  async waterAll(userId: string) {
+    return this.waterPlants(userId, {})
+  }
+
+  async waterDueToday(userId: string) {
+    const { startOfTomorrow } = this.getDayRange()
+
+    return this.waterPlants(userId, {
+      nextWateringAt: {
+        lt: startOfTomorrow
+      }
+    })
+  }
+
+  async waterSelected(userId: string, plantIds: string[]) {
+    const uniquePlantIds = Array.from(new Set(plantIds))
+
+    if (!uniquePlantIds.length) return []
+
+    return this.waterPlants(userId, {
+      id: {
+        in: uniquePlantIds
+      }
+    })
   }
 
   async create(dto: UserPlantDto, userId: string) {

@@ -15,6 +15,7 @@ import { Auth } from 'src/auth/decorators/auth.decorator'
 import { CurrentUser } from 'src/auth/decorators/user.decorator'
 import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
+import { WaterUserPlantsDto } from './dto/water-user-plants.dto'
 
 @Controller('user/plants')
 export class UserPlantController {
@@ -26,11 +27,35 @@ export class UserPlantController {
     return this.userPlantService.getAll(userId)
   }
 
+  @Get('watering-overview')
+  @Auth()
+  async getWateringOverview(@CurrentUser('id') userId: string) {
+    return this.userPlantService.getWateringOverview(userId)
+  }
+
   @HttpCode(200)
   @Post('water-all')
   @Auth()
   async waterAll(@CurrentUser('id') userId: string) {
     return this.userPlantService.waterAll(userId)
+  }
+
+  @HttpCode(200)
+  @Post('water-due-today')
+  @Auth()
+  async waterDueToday(@CurrentUser('id') userId: string) {
+    return this.userPlantService.waterDueToday(userId)
+  }
+
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
+  @Post('water-selected')
+  @Auth()
+  async waterSelected(
+    @Body() dto: WaterUserPlantsDto,
+    @CurrentUser('id') userId: string
+  ) {
+    return this.userPlantService.waterSelected(userId, dto.plantIds)
   }
 
   @Get(':id')
