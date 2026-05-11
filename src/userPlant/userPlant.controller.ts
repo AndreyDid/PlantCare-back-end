@@ -5,6 +5,7 @@ import {
   Delete,
   Get,
   HttpCode,
+  InternalServerErrorException,
   Param,
   Post,
   Put,
@@ -14,10 +15,11 @@ import {
   ValidationPipe
 } from '@nestjs/common'
 import { FileInterceptor } from '@nestjs/platform-express'
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
+import { ConfigService } from '@nestjs/config'
 import { randomUUID } from 'crypto'
-import { mkdirSync } from 'fs'
-import { diskStorage } from 'multer'
-import { extname, join } from 'path'
+import { memoryStorage } from 'multer'
+import { extname } from 'path'
 import { UserPlantService } from './userPlant.service'
 import { Auth } from 'src/auth/decorators/auth.decorator'
 import { CurrentUser } from 'src/auth/decorators/user.decorator'
@@ -25,7 +27,6 @@ import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 import { WaterUserPlantsDto } from './dto/water-user-plants.dto'
 
-const uploadDirectory = join(process.cwd(), 'uploads', 'plants')
 const imageExtensionsByMimeType: Record<string, string> = {
   'image/gif': '.gif',
   'image/jpeg': '.jpg',
@@ -33,12 +34,46 @@ const imageExtensionsByMimeType: Record<string, string> = {
   'image/webp': '.webp'
 }
 type UploadedPlantPhoto = {
-  filename: string
+  originalname: string
+  mimetype: string
+  buffer: Buffer
 }
 
 @Controller('user/plants')
 export class UserPlantController {
-  constructor(private readonly userPlantService: UserPlantService) {}
+  private readonly s3Client: S3Client
+
+  constructor(
+    private readonly userPlantService: UserPlantService,
+    private readonly configService: ConfigService
+  ) {
+    this.s3Client = new S3Client({
+      endpoint: this.configService.get<string>('S3_ENDPOINT'),
+      region: this.configService.get<string>('S3_REGION') ?? 'us-east-1',
+      forcePathStyle: true,
+      credentials: {
+        accessKeyId: this.configService.get<string>('S3_ACCESS_KEY') ?? '',
+        secretAccessKey: this.configService.get<string>('S3_SECRET_KEY') ?? ''
+      }
+    })
+  }
+
+  private getS3Config() {
+    const endpoint = this.configService.get<string>('S3_ENDPOINT')
+    const bucket = this.configService.get<string>('S3_BUCKET')
+    const publicUrl = this.configService.get<string>('S3_PUBLIC_URL')
+    const accessKey = this.configService.get<string>('S3_ACCESS_KEY')
+    const secretKey = this.configService.get<string>('S3_SECRET_KEY')
+
+    if (!endpoint || !bucket || !publicUrl || !accessKey || !secretKey) {
+      throw new InternalServerErrorException('S3 storage is not configured')
+    }
+
+    return {
+      bucket,
+      publicUrl: publicUrl.endsWith('/') ? publicUrl : `${publicUrl}/`
+    }
+  }
 
   @Get()
   @Auth()
@@ -82,19 +117,7 @@ export class UserPlantController {
   @Auth()
   @UseInterceptors(
     FileInterceptor('file', {
-      storage: diskStorage({
-        destination: (_request, _file, callback) => {
-          mkdirSync(uploadDirectory, { recursive: true })
-          callback(null, uploadDirectory)
-        },
-        filename: (_request, file, callback) => {
-          const extension =
-            imageExtensionsByMimeType[file.mimetype] ||
-            extname(file.originalname).toLowerCase()
-
-          callback(null, `${Date.now()}-${randomUUID()}${extension}`)
-        }
-      }),
+      storage: memoryStorage(),
       fileFilter: (_request, file, callback) => {
         if (!imageExtensionsByMimeType[file.mimetype]) {
           callback(
@@ -114,8 +137,23 @@ export class UserPlantController {
   async uploadPhoto(@UploadedFile() file?: UploadedPlantPhoto) {
     if (!file) throw new BadRequestException('Photo file is required')
 
+    const { bucket, publicUrl } = this.getS3Config()
+    const extension =
+      imageExtensionsByMimeType[file.mimetype] ||
+      extname(file.originalname).toLowerCase()
+    const key = `plants/${Date.now()}-${randomUUID()}${extension}`
+
+    await this.s3Client.send(
+      new PutObjectCommand({
+        Bucket: bucket,
+        Key: key,
+        Body: file.buffer,
+        ContentType: file.mimetype
+      })
+    )
+
     return {
-      url: `/uploads/plants/${file.filename}`
+      url: new URL(key, publicUrl).toString()
     }
   }
 
