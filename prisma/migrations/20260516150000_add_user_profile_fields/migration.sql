@@ -1,0 +1,2 @@
+ALTER TABLE "users" ADD COLUMN "city" TEXT;
+ALTER TABLE "users" ADD COLUMN "window_directions" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[];

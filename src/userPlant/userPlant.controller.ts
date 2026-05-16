@@ -27,6 +27,8 @@ import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 import { WaterUserPlantsDto } from './dto/water-user-plants.dto'
 import { CreatePlantCareEventDto } from './dto/create-plant-care-event.dto'
+import { ExistingPlantAiDto, SuggestPlantCareDto } from './dto/plant-ai.dto'
+import { PlantAiService } from './plant-ai.service'
 
 const imageExtensionsByMimeType: Record<string, string> = {
   'image/gif': '.gif',
@@ -46,6 +48,7 @@ export class UserPlantController {
 
   constructor(
     private readonly userPlantService: UserPlantService,
+    private readonly plantAiService: PlantAiService,
     private readonly configService: ConfigService
   ) {
     this.s3Client = new S3Client({
@@ -111,6 +114,38 @@ export class UserPlantController {
     @CurrentUser('id') userId: string
   ) {
     return this.userPlantService.waterSelected(userId, dto.plantIds)
+  }
+
+  @HttpCode(200)
+  @UsePipes(new ValidationPipe())
+  @Post('ai/suggest')
+  @Auth()
+  async suggestCare(@Body() dto: SuggestPlantCareDto) {
+    return this.plantAiService.suggestCare(dto)
+  }
+
+  @HttpCode(200)
+  @UsePipes(new ValidationPipe())
+  @Post(':id/ai/suggest')
+  @Auth()
+  async suggestExistingCare(
+    @Param('id') id: string,
+    @CurrentUser('id') userId: string,
+    @Body() dto: ExistingPlantAiDto
+  ) {
+    return this.plantAiService.suggestExistingCare(id, userId, dto)
+  }
+
+  @HttpCode(200)
+  @UsePipes(new ValidationPipe())
+  @Post(':id/ai/analyze-care')
+  @Auth()
+  async analyzeCare(
+    @Param('id') id: string,
+    @CurrentUser('id') userId: string,
+    @Body() dto: ExistingPlantAiDto
+  ) {
+    return this.plantAiService.analyzeCare(id, userId, dto)
   }
 
   @HttpCode(200)

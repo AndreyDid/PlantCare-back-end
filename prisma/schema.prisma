@@ -19,6 +19,8 @@ model User {
 
   email    String  @unique
   name     String?
+  city     String?
+  windowDirections String[] @default([]) @map("window_directions")
   password String
 
   plants UserPlant[]
