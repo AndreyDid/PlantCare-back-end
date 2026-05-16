@@ -91,6 +91,12 @@ export class UserPlantController {
     return this.userPlantService.getWateringOverview(userId)
   }
 
+  @Get('weather-watering-overview')
+  @Auth()
+  async getWeatherWateringOverview(@CurrentUser('id') userId: string) {
+    return this.userPlantService.getWeatherWateringOverview(userId)
+  }
+
   @HttpCode(200)
   @Post('water-all')
   @Auth()

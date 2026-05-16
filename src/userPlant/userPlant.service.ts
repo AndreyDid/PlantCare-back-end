@@ -7,10 +7,23 @@ import {
 } from './dto/create-plant-care-event.dto'
 import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
+import { CurrentWeatherSummary, WeatherService } from './weather.service'
+
+type WeatherWateringTone = 'normal' | 'attention' | 'caution'
+
+type WeatherWateringAdvice = {
+  tone: WeatherWateringTone
+  title: string
+  text: string
+  details: string[]
+}
 
 @Injectable()
 export class UserPlantService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    private readonly weatherService: WeatherService
+  ) {}
 
   private getPositiveNumber(value?: number | null) {
     return value && value > 0 ? value : null
@@ -67,8 +80,9 @@ export class UserPlantService {
     }
 
     return (
-      this.getPositiveNumber(plant.wateringIntervalWinterDays as number | null) ??
-      baseInterval
+      this.getPositiveNumber(
+        plant.wateringIntervalWinterDays as number | null
+      ) ?? baseInterval
     )
   }
 
@@ -162,10 +176,7 @@ export class UserPlantService {
     }
   }
 
-  private async waterPlants(
-    userId: string,
-    where: Prisma.UserPlantWhereInput
-  ) {
+  private async waterPlants(userId: string, where: Prisma.UserPlantWhereInput) {
     const wateredAt = new Date()
     const plants = await this.prisma.userPlant.findMany({
       where: {
@@ -204,6 +215,115 @@ export class UserPlantService {
 
       return updatedPlants
     })
+  }
+
+  private getWeatherWateringAdvice({
+    city,
+    dueTodayCount,
+    dueTomorrowCount,
+    weather
+  }: {
+    city?: string | null
+    dueTodayCount: number
+    dueTomorrowCount: number
+    weather: CurrentWeatherSummary | null
+  }): WeatherWateringAdvice {
+    const upcomingCount = dueTodayCount + dueTomorrowCount
+
+    if (!upcomingCount) {
+      return {
+        tone: 'normal',
+        title: 'Ближайших поливов нет',
+        text: 'По расписанию на сегодня и завтра полив не требуется.',
+        details: [
+          'Можно ограничиться быстрой проверкой влажности верхнего слоя.'
+        ]
+      }
+    }
+
+    if (!city?.trim()) {
+      return {
+        tone: 'attention',
+        title: 'Город не указан',
+        text: 'Добавьте город в профиле, чтобы учитывать погоду при ближайших поливах.',
+        details: [
+          `${upcomingCount} ${this.formatCount(upcomingCount, [
+            'растение',
+            'растения',
+            'растений'
+          ])} в ближайшем поливе останутся в обычном расписании.`
+        ]
+      }
+    }
+
+    if (!weather) {
+      return {
+        tone: 'attention',
+        title: 'Погода недоступна',
+        text: 'Не удалось получить погодные данные, поэтому ориентируйтесь на расписание и влажность грунта.',
+        details: [
+          `${dueTodayCount} сегодня, ${dueTomorrowCount} завтра по текущему графику.`
+        ]
+      }
+    }
+
+    const temperature = weather.apparentTemperatureC ?? weather.temperatureC
+    const humidity = weather.humidityPercent
+    const precipitation =
+      (weather.today.precipitationMm ?? 0) +
+      (dueTomorrowCount ? (weather.tomorrow.precipitationMm ?? 0) : 0)
+    const hotAndDry =
+      (temperature !== null && temperature >= 27) ||
+      (humidity !== null && humidity <= 35)
+    const coolAndWet =
+      (temperature !== null && temperature <= 16) ||
+      (humidity !== null && humidity >= 75) ||
+      precipitation >= 8
+
+    if (hotAndDry) {
+      return {
+        tone: 'caution',
+        title: 'Жарко или сухо',
+        text: 'Ближайшие поливы лучше не откладывать, но перед поливом все равно проверьте грунт.',
+        details: [
+          `${dueTodayCount} сегодня, ${dueTomorrowCount} завтра.`,
+          'Если растение стоит у окна или батареи, верхний слой может пересохнуть быстрее.'
+        ]
+      }
+    }
+
+    if (coolAndWet) {
+      return {
+        tone: 'attention',
+        title: 'Прохладно или влажно',
+        text: 'Есть риск перелива: поливайте только растения с подсохшим верхним слоем грунта.',
+        details: [
+          `${dueTodayCount} сегодня, ${dueTomorrowCount} завтра.`,
+          'Для растений в прохладных местах лучше уменьшить объем воды.'
+        ]
+      }
+    }
+
+    return {
+      tone: 'normal',
+      title: 'Погода спокойная',
+      text: 'Можно идти по обычному графику и точечно проверить растения из ближайшего списка.',
+      details: [
+        `${dueTodayCount} сегодня, ${dueTomorrowCount} завтра.`,
+        'Погодных причин массово сдвигать полив нет.'
+      ]
+    }
+  }
+
+  private formatCount(count: number, labels: [string, string, string]) {
+    const lastTwoDigits = count % 100
+    const lastDigit = count % 10
+
+    if (lastTwoDigits >= 11 && lastTwoDigits <= 14) return labels[2]
+    if (lastDigit === 1) return labels[0]
+    if (lastDigit >= 2 && lastDigit <= 4) return labels[1]
+
+    return labels[2]
   }
 
   async getAll(userId: string) {
@@ -434,6 +554,40 @@ export class UserPlantService {
     return {
       dueToday,
       dueTomorrow
+    }
+  }
+
+  async getWeatherWateringOverview(userId: string) {
+    const [user, wateringOverview] = await Promise.all([
+      this.prisma.user.findUnique({
+        where: {
+          id: userId
+        },
+        select: {
+          city: true
+        }
+      }),
+      this.getWateringOverview(userId)
+    ])
+    const city = user?.city?.trim() || null
+    const weather = city
+      ? await this.weatherService.getCurrentSummary(city).catch(() => null)
+      : null
+    const dueTodayCount = wateringOverview.dueToday.length
+    const dueTomorrowCount = wateringOverview.dueTomorrow.length
+
+    return {
+      city,
+      weather,
+      dueTodayCount,
+      dueTomorrowCount,
+      upcomingPlantCount: dueTodayCount + dueTomorrowCount,
+      advice: this.getWeatherWateringAdvice({
+        city,
+        dueTodayCount,
+        dueTomorrowCount,
+        weather
+      })
     }
   }
 
