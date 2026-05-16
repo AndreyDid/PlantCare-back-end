@@ -1,14 +1,11 @@
 import {
   IsArray,
   IsEmail,
-  IsIn,
   IsOptional,
   IsString,
   MaxLength,
   MinLength
 } from 'class-validator'
-
-export const WINDOW_DIRECTIONS = ['north', 'east', 'south', 'west'] as const
 
 export class UserDto {
   @IsEmail()
@@ -26,7 +23,8 @@ export class UserDto {
   city?: string | null
 
   @IsArray()
-  @IsIn(WINDOW_DIRECTIONS, { each: true })
+  @IsString({ each: true })
+  @MaxLength(160, { each: true })
   @IsOptional()
   windowDirections?: string[]
 
