@@ -60,6 +60,11 @@ export type UserPlant = Prisma.UserPlantModel
  */
 export type WateringLog = Prisma.WateringLogModel
 /**
+ * Model PlantCareEvent
+ * 
+ */
+export type PlantCareEvent = Prisma.PlantCareEventModel
+/**
  * Model Reminder
  * 
  */

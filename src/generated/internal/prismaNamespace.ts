@@ -388,6 +388,7 @@ export const ModelName = {
   PlantType: 'PlantType',
   UserPlant: 'UserPlant',
   WateringLog: 'WateringLog',
+  PlantCareEvent: 'PlantCareEvent',
   Reminder: 'Reminder',
   PlantDiagnosis: 'PlantDiagnosis'
 } as const
@@ -405,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "plantType" | "userPlant" | "wateringLog" | "reminder" | "plantDiagnosis"
+    modelProps: "user" | "plantType" | "userPlant" | "wateringLog" | "plantCareEvent" | "reminder" | "plantDiagnosis"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -705,6 +706,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PlantCareEvent: {
+      payload: Prisma.$PlantCareEventPayload<ExtArgs>
+      fields: Prisma.PlantCareEventFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PlantCareEventFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PlantCareEventFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>
+        }
+        findFirst: {
+          args: Prisma.PlantCareEventFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PlantCareEventFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>
+        }
+        findMany: {
+          args: Prisma.PlantCareEventFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>[]
+        }
+        create: {
+          args: Prisma.PlantCareEventCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>
+        }
+        createMany: {
+          args: Prisma.PlantCareEventCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PlantCareEventCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>[]
+        }
+        delete: {
+          args: Prisma.PlantCareEventDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>
+        }
+        update: {
+          args: Prisma.PlantCareEventUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>
+        }
+        deleteMany: {
+          args: Prisma.PlantCareEventDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PlantCareEventUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PlantCareEventUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>[]
+        }
+        upsert: {
+          args: Prisma.PlantCareEventUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlantCareEventPayload>
+        }
+        aggregate: {
+          args: Prisma.PlantCareEventAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePlantCareEvent>
+        }
+        groupBy: {
+          args: Prisma.PlantCareEventGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PlantCareEventGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PlantCareEventCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PlantCareEventCountAggregateOutputType> | number
+        }
+      }
+    }
     Reminder: {
       payload: Prisma.$ReminderPayload<ExtArgs>
       fields: Prisma.ReminderFieldRefs
@@ -966,6 +1041,21 @@ export const WateringLogScalarFieldEnum = {
 export type WateringLogScalarFieldEnum = (typeof WateringLogScalarFieldEnum)[keyof typeof WateringLogScalarFieldEnum]
 
 
+export const PlantCareEventScalarFieldEnum = {
+  id: 'id',
+  plantId: 'plantId',
+  type: 'type',
+  title: 'title',
+  description: 'description',
+  eventAt: 'eventAt',
+  amountMl: 'amountMl',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PlantCareEventScalarFieldEnum = (typeof PlantCareEventScalarFieldEnum)[keyof typeof PlantCareEventScalarFieldEnum]
+
+
 export const ReminderScalarFieldEnum = {
   id: 'id',
   plantId: 'plantId',
@@ -1172,6 +1262,7 @@ export type GlobalOmitConfig = {
   plantType?: Prisma.PlantTypeOmit
   userPlant?: Prisma.UserPlantOmit
   wateringLog?: Prisma.WateringLogOmit
+  plantCareEvent?: Prisma.PlantCareEventOmit
   reminder?: Prisma.ReminderOmit
   plantDiagnosis?: Prisma.PlantDiagnosisOmit
 }

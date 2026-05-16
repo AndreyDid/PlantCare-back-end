@@ -26,6 +26,7 @@ import { CurrentUser } from 'src/auth/decorators/user.decorator'
 import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 import { WaterUserPlantsDto } from './dto/water-user-plants.dto'
+import { CreatePlantCareEventDto } from './dto/create-plant-care-event.dto'
 
 const imageExtensionsByMimeType: Record<string, string> = {
   'image/gif': '.gif',
@@ -161,6 +162,38 @@ export class UserPlantController {
   @Auth()
   async getById(@Param('id') id: string, @CurrentUser('id') userId: string) {
     return this.userPlantService.getById(id, userId)
+  }
+
+  @Get(':id/events')
+  @Auth()
+  async getCareEvents(
+    @Param('id') id: string,
+    @CurrentUser('id') userId: string
+  ) {
+    return this.userPlantService.getCareEvents(id, userId)
+  }
+
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
+  @Post(':id/events')
+  @Auth()
+  async createCareEvent(
+    @Param('id') id: string,
+    @CurrentUser('id') userId: string,
+    @Body() dto: CreatePlantCareEventDto
+  ) {
+    return this.userPlantService.createCareEvent(id, userId, dto)
+  }
+
+  @HttpCode(200)
+  @Delete(':id/events/:eventId')
+  @Auth()
+  async deleteCareEvent(
+    @Param('id') id: string,
+    @Param('eventId') eventId: string,
+    @CurrentUser('id') userId: string
+  ) {
+    return this.userPlantService.deleteCareEvent(id, eventId, userId)
   }
 
   @UsePipes(new ValidationPipe())

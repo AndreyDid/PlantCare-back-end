@@ -467,6 +467,7 @@ export type UserPlantWhereInput = {
   plantType?: Prisma.XOR<Prisma.PlantTypeNullableScalarRelationFilter, Prisma.PlantTypeWhereInput> | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   wateringLogs?: Prisma.WateringLogListRelationFilter
+  careEvents?: Prisma.PlantCareEventListRelationFilter
   reminders?: Prisma.ReminderListRelationFilter
   plantDiagnosis?: Prisma.PlantDiagnosisListRelationFilter
 }
@@ -506,6 +507,7 @@ export type UserPlantOrderByWithRelationInput = {
   plantType?: Prisma.PlantTypeOrderByWithRelationInput
   user?: Prisma.UserOrderByWithRelationInput
   wateringLogs?: Prisma.WateringLogOrderByRelationAggregateInput
+  careEvents?: Prisma.PlantCareEventOrderByRelationAggregateInput
   reminders?: Prisma.ReminderOrderByRelationAggregateInput
   plantDiagnosis?: Prisma.PlantDiagnosisOrderByRelationAggregateInput
 }
@@ -548,6 +550,7 @@ export type UserPlantWhereUniqueInput = Prisma.AtLeast<{
   plantType?: Prisma.XOR<Prisma.PlantTypeNullableScalarRelationFilter, Prisma.PlantTypeWhereInput> | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   wateringLogs?: Prisma.WateringLogListRelationFilter
+  careEvents?: Prisma.PlantCareEventListRelationFilter
   reminders?: Prisma.ReminderListRelationFilter
   plantDiagnosis?: Prisma.PlantDiagnosisListRelationFilter
 }, "id">
@@ -661,6 +664,7 @@ export type UserPlantCreateInput = {
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
@@ -698,6 +702,7 @@ export type UserPlantUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
 }
@@ -735,6 +740,7 @@ export type UserPlantUpdateInput = {
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
@@ -772,6 +778,7 @@ export type UserPlantUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
 }
@@ -1123,6 +1130,20 @@ export type UserPlantUpdateOneRequiredWithoutWateringLogsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserPlantUpdateToOneWithWhereWithoutWateringLogsInput, Prisma.UserPlantUpdateWithoutWateringLogsInput>, Prisma.UserPlantUncheckedUpdateWithoutWateringLogsInput>
 }
 
+export type UserPlantCreateNestedOneWithoutCareEventsInput = {
+  create?: Prisma.XOR<Prisma.UserPlantCreateWithoutCareEventsInput, Prisma.UserPlantUncheckedCreateWithoutCareEventsInput>
+  connectOrCreate?: Prisma.UserPlantCreateOrConnectWithoutCareEventsInput
+  connect?: Prisma.UserPlantWhereUniqueInput
+}
+
+export type UserPlantUpdateOneRequiredWithoutCareEventsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserPlantCreateWithoutCareEventsInput, Prisma.UserPlantUncheckedCreateWithoutCareEventsInput>
+  connectOrCreate?: Prisma.UserPlantCreateOrConnectWithoutCareEventsInput
+  upsert?: Prisma.UserPlantUpsertWithoutCareEventsInput
+  connect?: Prisma.UserPlantWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserPlantUpdateToOneWithWhereWithoutCareEventsInput, Prisma.UserPlantUpdateWithoutCareEventsInput>, Prisma.UserPlantUncheckedUpdateWithoutCareEventsInput>
+}
+
 export type UserPlantCreateNestedOneWithoutRemindersInput = {
   create?: Prisma.XOR<Prisma.UserPlantCreateWithoutRemindersInput, Prisma.UserPlantUncheckedCreateWithoutRemindersInput>
   connectOrCreate?: Prisma.UserPlantCreateOrConnectWithoutRemindersInput
@@ -1183,6 +1204,7 @@ export type UserPlantCreateWithoutUserInput = {
   updatedAt?: Date | string
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
@@ -1219,6 +1241,7 @@ export type UserPlantUncheckedCreateWithoutUserInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
 }
@@ -1318,6 +1341,7 @@ export type UserPlantCreateWithoutPlantTypeInput = {
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
@@ -1354,6 +1378,7 @@ export type UserPlantUncheckedCreateWithoutPlantTypeInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
 }
@@ -1416,6 +1441,7 @@ export type UserPlantCreateWithoutWateringLogsInput = {
   updatedAt?: Date | string
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
@@ -1452,6 +1478,7 @@ export type UserPlantUncheckedCreateWithoutWateringLogsInput = {
   nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
 }
@@ -1504,6 +1531,7 @@ export type UserPlantUpdateWithoutWateringLogsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
@@ -1540,6 +1568,171 @@ export type UserPlantUncheckedUpdateWithoutWateringLogsInput = {
   nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
+  plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
+}
+
+export type UserPlantCreateWithoutCareEventsInput = {
+  id?: string
+  nickname?: string | null
+  plantName?: string | null
+  location?: string | null
+  photoUrl?: string | null
+  lastWateredAt?: Date | string | null
+  nextWateringAt?: Date | string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  lightLevel?: string | null
+  temperatureMin?: number | null
+  temperatureMax?: number | null
+  humidityMin?: number | null
+  humidityMax?: number | null
+  potType?: string | null
+  potSize?: string | null
+  soilType?: string | null
+  lastRepottedAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  fertilizingIntervalDays?: number | null
+  lastFertilizedAt?: Date | string | null
+  nextFertilizingAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
+  user: Prisma.UserCreateNestedOneWithoutPlantsInput
+  wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
+  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
+}
+
+export type UserPlantUncheckedCreateWithoutCareEventsInput = {
+  id?: string
+  nickname?: string | null
+  plantName?: string | null
+  location?: string | null
+  photoUrl?: string | null
+  plantTypeId?: string | null
+  userId: string
+  lastWateredAt?: Date | string | null
+  nextWateringAt?: Date | string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  lightLevel?: string | null
+  temperatureMin?: number | null
+  temperatureMax?: number | null
+  humidityMin?: number | null
+  humidityMax?: number | null
+  potType?: string | null
+  potSize?: string | null
+  soilType?: string | null
+  lastRepottedAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  fertilizingIntervalDays?: number | null
+  lastFertilizedAt?: Date | string | null
+  nextFertilizingAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
+  plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
+}
+
+export type UserPlantCreateOrConnectWithoutCareEventsInput = {
+  where: Prisma.UserPlantWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserPlantCreateWithoutCareEventsInput, Prisma.UserPlantUncheckedCreateWithoutCareEventsInput>
+}
+
+export type UserPlantUpsertWithoutCareEventsInput = {
+  update: Prisma.XOR<Prisma.UserPlantUpdateWithoutCareEventsInput, Prisma.UserPlantUncheckedUpdateWithoutCareEventsInput>
+  create: Prisma.XOR<Prisma.UserPlantCreateWithoutCareEventsInput, Prisma.UserPlantUncheckedCreateWithoutCareEventsInput>
+  where?: Prisma.UserPlantWhereInput
+}
+
+export type UserPlantUpdateToOneWithWhereWithoutCareEventsInput = {
+  where?: Prisma.UserPlantWhereInput
+  data: Prisma.XOR<Prisma.UserPlantUpdateWithoutCareEventsInput, Prisma.UserPlantUncheckedUpdateWithoutCareEventsInput>
+}
+
+export type UserPlantUpdateWithoutCareEventsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
+  wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
+  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
+}
+
+export type UserPlantUncheckedUpdateWithoutCareEventsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
 }
@@ -1577,6 +1770,7 @@ export type UserPlantCreateWithoutRemindersInput = {
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
 
@@ -1613,6 +1807,7 @@ export type UserPlantUncheckedCreateWithoutRemindersInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
 }
 
@@ -1665,6 +1860,7 @@ export type UserPlantUpdateWithoutRemindersInput = {
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
 
@@ -1701,6 +1897,7 @@ export type UserPlantUncheckedUpdateWithoutRemindersInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
 }
 
@@ -1737,6 +1934,7 @@ export type UserPlantCreateWithoutPlantDiagnosisInput = {
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
 }
 
@@ -1773,6 +1971,7 @@ export type UserPlantUncheckedCreateWithoutPlantDiagnosisInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
 }
 
@@ -1825,6 +2024,7 @@ export type UserPlantUpdateWithoutPlantDiagnosisInput = {
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
 }
 
@@ -1861,6 +2061,7 @@ export type UserPlantUncheckedUpdateWithoutPlantDiagnosisInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
 }
 
@@ -1929,6 +2130,7 @@ export type UserPlantUpdateWithoutUserInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
@@ -1965,6 +2167,7 @@ export type UserPlantUncheckedUpdateWithoutUserInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
 }
@@ -2067,6 +2270,7 @@ export type UserPlantUpdateWithoutPlantTypeInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
@@ -2103,6 +2307,7 @@ export type UserPlantUncheckedUpdateWithoutPlantTypeInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
 }
@@ -2147,12 +2352,14 @@ export type UserPlantUncheckedUpdateManyWithoutPlantTypeInput = {
 
 export type UserPlantCountOutputType = {
   wateringLogs: number
+  careEvents: number
   reminders: number
   plantDiagnosis: number
 }
 
 export type UserPlantCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   wateringLogs?: boolean | UserPlantCountOutputTypeCountWateringLogsArgs
+  careEvents?: boolean | UserPlantCountOutputTypeCountCareEventsArgs
   reminders?: boolean | UserPlantCountOutputTypeCountRemindersArgs
   plantDiagnosis?: boolean | UserPlantCountOutputTypeCountPlantDiagnosisArgs
 }
@@ -2172,6 +2379,13 @@ export type UserPlantCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ex
  */
 export type UserPlantCountOutputTypeCountWateringLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.WateringLogWhereInput
+}
+
+/**
+ * UserPlantCountOutputType without action
+ */
+export type UserPlantCountOutputTypeCountCareEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PlantCareEventWhereInput
 }
 
 /**
@@ -2224,6 +2438,7 @@ export type UserPlantSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   plantType?: boolean | Prisma.UserPlant$plantTypeArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   wateringLogs?: boolean | Prisma.UserPlant$wateringLogsArgs<ExtArgs>
+  careEvents?: boolean | Prisma.UserPlant$careEventsArgs<ExtArgs>
   reminders?: boolean | Prisma.UserPlant$remindersArgs<ExtArgs>
   plantDiagnosis?: boolean | Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>
   _count?: boolean | Prisma.UserPlantCountOutputTypeDefaultArgs<ExtArgs>
@@ -2340,6 +2555,7 @@ export type UserPlantInclude<ExtArgs extends runtime.Types.Extensions.InternalAr
   plantType?: boolean | Prisma.UserPlant$plantTypeArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   wateringLogs?: boolean | Prisma.UserPlant$wateringLogsArgs<ExtArgs>
+  careEvents?: boolean | Prisma.UserPlant$careEventsArgs<ExtArgs>
   reminders?: boolean | Prisma.UserPlant$remindersArgs<ExtArgs>
   plantDiagnosis?: boolean | Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>
   _count?: boolean | Prisma.UserPlantCountOutputTypeDefaultArgs<ExtArgs>
@@ -2359,6 +2575,7 @@ export type $UserPlantPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     plantType: Prisma.$PlantTypePayload<ExtArgs> | null
     user: Prisma.$UserPayload<ExtArgs>
     wateringLogs: Prisma.$WateringLogPayload<ExtArgs>[]
+    careEvents: Prisma.$PlantCareEventPayload<ExtArgs>[]
     reminders: Prisma.$ReminderPayload<ExtArgs>[]
     plantDiagnosis: Prisma.$PlantDiagnosisPayload<ExtArgs>[]
   }
@@ -2791,6 +3008,7 @@ export interface Prisma__UserPlantClient<T, Null = never, ExtArgs extends runtim
   plantType<T extends Prisma.UserPlant$plantTypeArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$plantTypeArgs<ExtArgs>>): Prisma.Prisma__PlantTypeClient<runtime.Types.Result.GetResult<Prisma.$PlantTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   wateringLogs<T extends Prisma.UserPlant$wateringLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$wateringLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WateringLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  careEvents<T extends Prisma.UserPlant$careEventsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$careEventsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlantCareEventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   reminders<T extends Prisma.UserPlant$remindersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$remindersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReminderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   plantDiagnosis<T extends Prisma.UserPlant$plantDiagnosisArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlantDiagnosisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
@@ -3294,6 +3512,30 @@ export type UserPlant$wateringLogsArgs<ExtArgs extends runtime.Types.Extensions.
   take?: number
   skip?: number
   distinct?: Prisma.WateringLogScalarFieldEnum | Prisma.WateringLogScalarFieldEnum[]
+}
+
+/**
+ * UserPlant.careEvents
+ */
+export type UserPlant$careEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PlantCareEvent
+   */
+  select?: Prisma.PlantCareEventSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PlantCareEvent
+   */
+  omit?: Prisma.PlantCareEventOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PlantCareEventInclude<ExtArgs> | null
+  where?: Prisma.PlantCareEventWhereInput
+  orderBy?: Prisma.PlantCareEventOrderByWithRelationInput | Prisma.PlantCareEventOrderByWithRelationInput[]
+  cursor?: Prisma.PlantCareEventWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PlantCareEventScalarFieldEnum | Prisma.PlantCareEventScalarFieldEnum[]
 }
 
 /**

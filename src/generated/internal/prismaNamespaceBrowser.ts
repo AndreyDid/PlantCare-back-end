@@ -55,6 +55,7 @@ export const ModelName = {
   PlantType: 'PlantType',
   UserPlant: 'UserPlant',
   WateringLog: 'WateringLog',
+  PlantCareEvent: 'PlantCareEvent',
   Reminder: 'Reminder',
   PlantDiagnosis: 'PlantDiagnosis'
 } as const
@@ -147,6 +148,21 @@ export const WateringLogScalarFieldEnum = {
 } as const
 
 export type WateringLogScalarFieldEnum = (typeof WateringLogScalarFieldEnum)[keyof typeof WateringLogScalarFieldEnum]
+
+
+export const PlantCareEventScalarFieldEnum = {
+  id: 'id',
+  plantId: 'plantId',
+  type: 'type',
+  title: 'title',
+  description: 'description',
+  eventAt: 'eventAt',
+  amountMl: 'amountMl',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PlantCareEventScalarFieldEnum = (typeof PlantCareEventScalarFieldEnum)[keyof typeof PlantCareEventScalarFieldEnum]
 
 
 export const ReminderScalarFieldEnum = {

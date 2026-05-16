@@ -88,6 +88,7 @@ model UserPlant {
   updatedAt DateTime @updatedAt
 
   wateringLogs   WateringLog[]
+  careEvents      PlantCareEvent[]
   reminders      Reminder[]
   plantDiagnosis PlantDiagnosis[]
 
@@ -107,6 +108,25 @@ model WateringLog {
   note String?
 
   @@map("watering_logs")
+}
+
+model PlantCareEvent {
+  id String @id @default(cuid())
+
+  plantId String @map("plant_id")
+  plant   UserPlant @relation(fields: [plantId], references: [id], onDelete: Cascade)
+
+  type        String
+  title       String?
+  description String?
+  eventAt     DateTime @default(now()) @map("event_at")
+  amountMl    Int?     @map("amount_ml")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([plantId, eventAt])
+  @@map("plant_care_events")
 }
 
 model Reminder {

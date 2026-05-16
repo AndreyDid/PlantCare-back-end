@@ -1,6 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { Prisma } from 'src/generated/client'
 import { PrismaService } from 'src/prisma.service'
+import {
+  CreatePlantCareEventDto,
+  PlantCareEventType
+} from './dto/create-plant-care-event.dto'
 import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 
@@ -108,6 +112,37 @@ export class UserPlantService {
     )
   }
 
+  private getNextFertilizingDate(
+    fertilizedAt: Date,
+    plant: {
+      fertilizingIntervalDays: number | null
+    }
+  ) {
+    const intervalDays = this.getPositiveNumber(plant.fertilizingIntervalDays)
+
+    return intervalDays ? this.addDays(fertilizedAt, intervalDays) : null
+  }
+
+  private getCareEventTitle(type: PlantCareEventType) {
+    if (type === 'WATERING') return 'Полив'
+    if (type === 'FERTILIZING') return 'Подкормка'
+    if (type === 'REPOTTING') return 'Пересадка'
+    if (type === 'OBSERVATION') return 'Наблюдение'
+
+    return 'Заметка'
+  }
+
+  private getCareEventOrderBy(): Prisma.PlantCareEventOrderByWithRelationInput[] {
+    return [
+      {
+        eventAt: 'desc'
+      },
+      {
+        createdAt: 'desc'
+      }
+    ]
+  }
+
   private getDayRange(date = new Date()) {
     const startOfToday = new Date(
       date.getFullYear(),
@@ -141,19 +176,34 @@ export class UserPlantService {
 
     if (!plants.length) return []
 
-    return this.prisma.$transaction(
-      plants.map(plant =>
-        this.prisma.userPlant.update({
-          where: {
-            id: plant.id
-          },
-          data: {
-            lastWateredAt: wateredAt,
-            nextWateringAt: this.getNextWateringDate(wateredAt, plant)
-          }
-        })
+    return this.prisma.$transaction(async tx => {
+      const updatedPlants = await Promise.all(
+        plants.map(plant =>
+          tx.userPlant.update({
+            where: {
+              id: plant.id
+            },
+            data: {
+              lastWateredAt: wateredAt,
+              nextWateringAt: this.getNextWateringDate(wateredAt, plant)
+            }
+          })
+        )
       )
-    )
+
+      await tx.plantCareEvent.createMany({
+        data: plants.map(plant => ({
+          plantId: plant.id,
+          type: 'WATERING',
+          title: this.getCareEventTitle('WATERING'),
+          eventAt: wateredAt,
+          amountMl: plant.wateringAmountMl,
+          description: plant.wateringNotes
+        }))
+      })
+
+      return updatedPlants
+    })
   }
 
   async getAll(userId: string) {
@@ -169,8 +219,187 @@ export class UserPlantService {
       where: {
         id,
         userId
+      },
+      include: {
+        careEvents: {
+          orderBy: this.getCareEventOrderBy()
+        }
       }
     })
+  }
+
+  async getCareEvents(plantId: string, userId: string) {
+    const plant = await this.prisma.userPlant.findFirst({
+      where: {
+        id: plantId,
+        userId
+      },
+      select: {
+        id: true
+      }
+    })
+
+    if (!plant) throw new NotFoundException('Plant not found')
+
+    return this.prisma.plantCareEvent.findMany({
+      where: {
+        plantId
+      },
+      orderBy: this.getCareEventOrderBy()
+    })
+  }
+
+  async createCareEvent(
+    plantId: string,
+    userId: string,
+    dto: CreatePlantCareEventDto
+  ) {
+    const plant = await this.prisma.userPlant.findFirst({
+      where: {
+        id: plantId,
+        userId
+      }
+    })
+
+    if (!plant) throw new NotFoundException('Plant not found')
+
+    const eventAt = dto.eventAt ? new Date(dto.eventAt) : new Date()
+    const updateData: Prisma.UserPlantUncheckedUpdateInput = {}
+
+    if (dto.type === 'WATERING') {
+      updateData.lastWateredAt = eventAt
+      updateData.nextWateringAt = this.getNextWateringDate(eventAt, plant)
+    }
+
+    if (dto.type === 'FERTILIZING') {
+      updateData.lastFertilizedAt = eventAt
+      updateData.nextFertilizingAt = this.getNextFertilizingDate(eventAt, plant)
+    }
+
+    if (dto.type === 'REPOTTING') {
+      updateData.lastRepottedAt = eventAt
+    }
+
+    await this.prisma.$transaction(async tx => {
+      if (Object.keys(updateData).length) {
+        await tx.userPlant.update({
+          where: {
+            id: plantId
+          },
+          data: updateData
+        })
+      }
+
+      await tx.plantCareEvent.create({
+        data: {
+          plantId,
+          type: dto.type,
+          title: dto.title?.trim() || this.getCareEventTitle(dto.type),
+          description: dto.description?.trim() || null,
+          eventAt,
+          amountMl: dto.amountMl ?? null
+        }
+      })
+    })
+
+    return this.getById(plantId, userId)
+  }
+
+  async deleteCareEvent(plantId: string, eventId: string, userId: string) {
+    const plant = await this.prisma.userPlant.findFirst({
+      where: {
+        id: plantId,
+        userId
+      }
+    })
+
+    if (!plant) throw new NotFoundException('Plant not found')
+
+    const careEvent = await this.prisma.plantCareEvent.findFirst({
+      where: {
+        id: eventId,
+        plantId
+      }
+    })
+
+    if (!careEvent) throw new NotFoundException('Care event not found')
+
+    await this.prisma.$transaction(async tx => {
+      await tx.plantCareEvent.delete({
+        where: {
+          id: eventId
+        }
+      })
+
+      if (careEvent.type === 'WATERING') {
+        const latestWatering = await tx.plantCareEvent.findFirst({
+          where: {
+            plantId,
+            type: 'WATERING'
+          },
+          orderBy: this.getCareEventOrderBy()
+        })
+
+        await tx.userPlant.update({
+          where: {
+            id: plantId
+          },
+          data: {
+            lastWateredAt: latestWatering?.eventAt ?? null,
+            nextWateringAt: latestWatering
+              ? this.getNextWateringDate(latestWatering.eventAt, {
+                  ...plant,
+                  lastWateredAt: null,
+                  nextWateringAt: null
+                })
+              : null
+          }
+        })
+      }
+
+      if (careEvent.type === 'FERTILIZING') {
+        const latestFertilizing = await tx.plantCareEvent.findFirst({
+          where: {
+            plantId,
+            type: 'FERTILIZING'
+          },
+          orderBy: this.getCareEventOrderBy()
+        })
+
+        await tx.userPlant.update({
+          where: {
+            id: plantId
+          },
+          data: {
+            lastFertilizedAt: latestFertilizing?.eventAt ?? null,
+            nextFertilizingAt: latestFertilizing
+              ? this.getNextFertilizingDate(latestFertilizing.eventAt, plant)
+              : null
+          }
+        })
+      }
+
+      if (careEvent.type === 'REPOTTING') {
+        const latestRepotting = await tx.plantCareEvent.findFirst({
+          where: {
+            plantId,
+            type: 'REPOTTING'
+          },
+          orderBy: this.getCareEventOrderBy()
+        })
+
+        await tx.userPlant.update({
+          where: {
+            id: plantId
+          },
+          data: {
+            lastRepottedAt: latestRepotting?.eventAt ?? null
+          }
+        })
+      }
+    })
+
+    return this.getById(plantId, userId)
   }
 
   async getWateringOverview(userId: string) {
