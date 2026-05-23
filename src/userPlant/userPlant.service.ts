@@ -5,6 +5,7 @@ import {
   CreatePlantCareEventDto,
   PlantCareEventType
 } from './dto/create-plant-care-event.dto'
+import { GetPlantCareEventsDto } from './dto/get-plant-care-events.dto'
 import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 import { CurrentWeatherSummary, WeatherService } from './weather.service'
@@ -366,6 +367,52 @@ export class UserPlantService {
         plantId
       },
       orderBy: this.getCareEventOrderBy()
+    })
+  }
+
+  async getAllCareEvents(userId: string, query: GetPlantCareEventsDto) {
+    const where: Prisma.PlantCareEventWhereInput = {
+      plant: {
+        userId
+      }
+    }
+
+    if (query.plantId) {
+      where.plantId = query.plantId
+    }
+
+    if (query.type) {
+      where.type = query.type
+    }
+
+    if (query.dateFrom || query.dateTo) {
+      where.eventAt = {}
+
+      if (query.dateFrom) {
+        where.eventAt.gte = new Date(query.dateFrom)
+      }
+
+      if (query.dateTo) {
+        const dateTo = new Date(query.dateTo)
+        dateTo.setUTCDate(dateTo.getUTCDate() + 1)
+        where.eventAt.lt = dateTo
+      }
+    }
+
+    return this.prisma.plantCareEvent.findMany({
+      where,
+      orderBy: this.getCareEventOrderBy(),
+      include: {
+        plant: {
+          select: {
+            id: true,
+            nickname: true,
+            plantName: true,
+            location: true,
+            photoUrl: true
+          }
+        }
+      }
     })
   }
 

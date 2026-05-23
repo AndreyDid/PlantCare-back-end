@@ -9,6 +9,7 @@ import {
   Param,
   Post,
   Put,
+  Query,
   UploadedFile,
   UseInterceptors,
   UsePipes,
@@ -27,6 +28,7 @@ import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 import { WaterUserPlantsDto } from './dto/water-user-plants.dto'
 import { CreatePlantCareEventDto } from './dto/create-plant-care-event.dto'
+import { GetPlantCareEventsDto } from './dto/get-plant-care-events.dto'
 import { ExistingPlantAiDto, SuggestPlantCareDto } from './dto/plant-ai.dto'
 import { PlantAiService } from './plant-ai.service'
 
@@ -197,6 +199,16 @@ export class UserPlantController {
     return {
       url: new URL(key, publicUrl).toString()
     }
+  }
+
+  @Get('events')
+  @Auth()
+  @UsePipes(new ValidationPipe())
+  async getAllCareEvents(
+    @CurrentUser('id') userId: string,
+    @Query() query: GetPlantCareEventsDto
+  ) {
+    return this.userPlantService.getAllCareEvents(userId, query)
   }
 
   @Get(':id')
