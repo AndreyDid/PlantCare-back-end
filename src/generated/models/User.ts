@@ -32,6 +32,7 @@ export type UserMinAggregateOutputType = {
   name: string | null
   city: string | null
   password: string | null
+  refreshTokenHash: string | null
 }
 
 export type UserMaxAggregateOutputType = {
@@ -42,6 +43,7 @@ export type UserMaxAggregateOutputType = {
   name: string | null
   city: string | null
   password: string | null
+  refreshTokenHash: string | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -53,6 +55,7 @@ export type UserCountAggregateOutputType = {
   city: number
   windowDirections: number
   password: number
+  refreshTokenHash: number
   _all: number
 }
 
@@ -65,6 +68,7 @@ export type UserMinAggregateInputType = {
   name?: true
   city?: true
   password?: true
+  refreshTokenHash?: true
 }
 
 export type UserMaxAggregateInputType = {
@@ -75,6 +79,7 @@ export type UserMaxAggregateInputType = {
   name?: true
   city?: true
   password?: true
+  refreshTokenHash?: true
 }
 
 export type UserCountAggregateInputType = {
@@ -86,6 +91,7 @@ export type UserCountAggregateInputType = {
   city?: true
   windowDirections?: true
   password?: true
+  refreshTokenHash?: true
   _all?: true
 }
 
@@ -170,6 +176,7 @@ export type UserGroupByOutputType = {
   city: string | null
   windowDirections: string[]
   password: string
+  refreshTokenHash: string | null
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
@@ -202,6 +209,7 @@ export type UserWhereInput = {
   city?: Prisma.StringNullableFilter<"User"> | string | null
   windowDirections?: Prisma.StringNullableListFilter<"User">
   password?: Prisma.StringFilter<"User"> | string
+  refreshTokenHash?: Prisma.StringNullableFilter<"User"> | string | null
   plants?: Prisma.UserPlantListRelationFilter
 }
 
@@ -214,6 +222,7 @@ export type UserOrderByWithRelationInput = {
   city?: Prisma.SortOrderInput | Prisma.SortOrder
   windowDirections?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  refreshTokenHash?: Prisma.SortOrderInput | Prisma.SortOrder
   plants?: Prisma.UserPlantOrderByRelationAggregateInput
 }
 
@@ -229,6 +238,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   city?: Prisma.StringNullableFilter<"User"> | string | null
   windowDirections?: Prisma.StringNullableListFilter<"User">
   password?: Prisma.StringFilter<"User"> | string
+  refreshTokenHash?: Prisma.StringNullableFilter<"User"> | string | null
   plants?: Prisma.UserPlantListRelationFilter
 }, "id" | "email">
 
@@ -241,6 +251,7 @@ export type UserOrderByWithAggregationInput = {
   city?: Prisma.SortOrderInput | Prisma.SortOrder
   windowDirections?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  refreshTokenHash?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
   _min?: Prisma.UserMinOrderByAggregateInput
@@ -258,6 +269,7 @@ export type UserScalarWhereWithAggregatesInput = {
   city?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   windowDirections?: Prisma.StringNullableListFilter<"User">
   password?: Prisma.StringWithAggregatesFilter<"User"> | string
+  refreshTokenHash?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
 }
 
 export type UserCreateInput = {
@@ -269,6 +281,7 @@ export type UserCreateInput = {
   city?: string | null
   windowDirections?: Prisma.UserCreatewindowDirectionsInput | string[]
   password: string
+  refreshTokenHash?: string | null
   plants?: Prisma.UserPlantCreateNestedManyWithoutUserInput
 }
 
@@ -281,6 +294,7 @@ export type UserUncheckedCreateInput = {
   city?: string | null
   windowDirections?: Prisma.UserCreatewindowDirectionsInput | string[]
   password: string
+  refreshTokenHash?: string | null
   plants?: Prisma.UserPlantUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -293,6 +307,7 @@ export type UserUpdateInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   windowDirections?: Prisma.UserUpdatewindowDirectionsInput | string[]
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  refreshTokenHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plants?: Prisma.UserPlantUpdateManyWithoutUserNestedInput
 }
 
@@ -305,6 +320,7 @@ export type UserUncheckedUpdateInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   windowDirections?: Prisma.UserUpdatewindowDirectionsInput | string[]
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  refreshTokenHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plants?: Prisma.UserPlantUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -317,6 +333,7 @@ export type UserCreateManyInput = {
   city?: string | null
   windowDirections?: Prisma.UserCreatewindowDirectionsInput | string[]
   password: string
+  refreshTokenHash?: string | null
 }
 
 export type UserUpdateManyMutationInput = {
@@ -328,6 +345,7 @@ export type UserUpdateManyMutationInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   windowDirections?: Prisma.UserUpdatewindowDirectionsInput | string[]
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  refreshTokenHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserUncheckedUpdateManyInput = {
@@ -339,6 +357,7 @@ export type UserUncheckedUpdateManyInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   windowDirections?: Prisma.UserUpdatewindowDirectionsInput | string[]
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  refreshTokenHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type StringNullableListFilter<$PrismaModel = never> = {
@@ -358,6 +377,7 @@ export type UserCountOrderByAggregateInput = {
   city?: Prisma.SortOrder
   windowDirections?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  refreshTokenHash?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
@@ -368,6 +388,7 @@ export type UserMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   city?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  refreshTokenHash?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
@@ -378,6 +399,7 @@ export type UserMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   city?: Prisma.SortOrder
   password?: Prisma.SortOrder
+  refreshTokenHash?: Prisma.SortOrder
 }
 
 export type UserScalarRelationFilter = {
@@ -429,6 +451,7 @@ export type UserCreateWithoutPlantsInput = {
   city?: string | null
   windowDirections?: Prisma.UserCreatewindowDirectionsInput | string[]
   password: string
+  refreshTokenHash?: string | null
 }
 
 export type UserUncheckedCreateWithoutPlantsInput = {
@@ -440,6 +463,7 @@ export type UserUncheckedCreateWithoutPlantsInput = {
   city?: string | null
   windowDirections?: Prisma.UserCreatewindowDirectionsInput | string[]
   password: string
+  refreshTokenHash?: string | null
 }
 
 export type UserCreateOrConnectWithoutPlantsInput = {
@@ -467,6 +491,7 @@ export type UserUpdateWithoutPlantsInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   windowDirections?: Prisma.UserUpdatewindowDirectionsInput | string[]
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  refreshTokenHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserUncheckedUpdateWithoutPlantsInput = {
@@ -478,6 +503,7 @@ export type UserUncheckedUpdateWithoutPlantsInput = {
   city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   windowDirections?: Prisma.UserUpdatewindowDirectionsInput | string[]
   password?: Prisma.StringFieldUpdateOperationsInput | string
+  refreshTokenHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -520,6 +546,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   city?: boolean
   windowDirections?: boolean
   password?: boolean
+  refreshTokenHash?: boolean
   plants?: boolean | Prisma.User$plantsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
@@ -533,6 +560,7 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   city?: boolean
   windowDirections?: boolean
   password?: boolean
+  refreshTokenHash?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -544,6 +572,7 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   city?: boolean
   windowDirections?: boolean
   password?: boolean
+  refreshTokenHash?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
@@ -555,9 +584,10 @@ export type UserSelectScalar = {
   city?: boolean
   windowDirections?: boolean
   password?: boolean
+  refreshTokenHash?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "email" | "name" | "city" | "windowDirections" | "password", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "email" | "name" | "city" | "windowDirections" | "password" | "refreshTokenHash", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   plants?: boolean | Prisma.User$plantsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -579,6 +609,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     city: string | null
     windowDirections: string[]
     password: string
+    refreshTokenHash: string | null
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -1011,6 +1042,7 @@ export interface UserFieldRefs {
   readonly city: Prisma.FieldRef<"User", 'String'>
   readonly windowDirections: Prisma.FieldRef<"User", 'String[]'>
   readonly password: Prisma.FieldRef<"User", 'String'>
+  readonly refreshTokenHash: Prisma.FieldRef<"User", 'String'>
 }
     
 

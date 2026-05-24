@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, UnauthorizedException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { PassportStrategy } from '@nestjs/passport'
 import { UserService } from 'src/user/user.service'
@@ -6,6 +6,7 @@ import { ExtractJwt, Strategy } from 'passport-jwt'
 
 type JwtPayload = {
   id: string
+  type?: 'access'
 }
 
 @Injectable()
@@ -21,6 +22,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     })
   }
   async validate(payload: JwtPayload) {
+    if (payload.type !== 'access') {
+      throw new UnauthorizedException('Invalid access token')
+    }
+
     return this.userService.getById(payload.id)
   }
 }

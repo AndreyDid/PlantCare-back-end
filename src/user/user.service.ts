@@ -86,10 +86,34 @@ export class UserService {
     return this.prisma.user.findUnique({
       where: {
         id
+      },
+      select: {
+        id: true,
+        createdAt: true,
+        updatedAt: true,
+        email: true,
+        name: true,
+        city: true,
+        windowDirections: true
       }
-      // include: {
-      //   plants: true
-      // }
+    })
+  }
+
+  async getByIdWithRefreshToken(id: string) {
+    return this.prisma.user.findUnique({
+      where: {
+        id
+      },
+      select: {
+        id: true,
+        createdAt: true,
+        updatedAt: true,
+        email: true,
+        name: true,
+        city: true,
+        windowDirections: true,
+        refreshTokenHash: true
+      }
     })
   }
 
@@ -118,7 +142,7 @@ export class UserService {
     if (!profile) throw new NotFoundException('User not found')
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password, _count, ...user } = profile
+    const { password, refreshTokenHash, _count, ...user } = profile
     const windowDirections = user.windowDirections
       .map(formatWindowPlacementEntry)
       .filter(Boolean)
@@ -182,5 +206,16 @@ export class UserService {
     })
 
     return this.getProfile(id)
+  }
+
+  async updateRefreshTokenHash(id: string, refreshTokenHash: string | null) {
+    return this.prisma.user.update({
+      where: {
+        id
+      },
+      data: {
+        refreshTokenHash
+      }
+    })
   }
 }

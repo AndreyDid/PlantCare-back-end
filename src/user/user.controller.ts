@@ -3,9 +3,7 @@ import {
   Controller,
   Get,
   HttpCode,
-  Put,
-  UsePipes,
-  ValidationPipe
+  Put
 } from '@nestjs/common'
 import { Auth } from 'src/auth/decorators/auth.decorator'
 import { CurrentUser } from 'src/auth/decorators/user.decorator'
@@ -22,7 +20,6 @@ export class UserController {
     return this.userService.getProfile(userId)
   }
 
-  @UsePipes(new ValidationPipe())
   @HttpCode(200)
   @Put('profile')
   @Auth()

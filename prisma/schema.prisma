@@ -17,11 +17,12 @@ model User {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  email    String  @unique
-  name     String?
-  city     String?
+  email            String  @unique
+  name             String?
+  city             String?
   windowDirections String[] @default([]) @map("window_directions")
-  password String
+  password         String
+  refreshTokenHash String?  @map("refresh_token_hash")
 
   plants UserPlant[]
 

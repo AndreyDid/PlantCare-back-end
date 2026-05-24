@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core'
+import { ValidationPipe } from '@nestjs/common'
 import { AppModule } from './app.module'
 import cookieParser from 'cookie-parser'
 import { ConfigService } from '@nestjs/config'
@@ -18,6 +19,13 @@ async function bootstrap() {
     .filter(Boolean)
 
   app.setGlobalPrefix('api')
+  app.useGlobalPipes(
+    new ValidationPipe({
+      forbidNonWhitelisted: true,
+      transform: true,
+      whitelist: true
+    })
+  )
   app.useStaticAssets(join(process.cwd(), 'uploads'), {
     prefix: '/uploads/'
   })

@@ -6,10 +6,15 @@ import {
   MaxLength,
   MinLength
 } from 'class-validator'
+import { Transform } from 'class-transformer'
 
 export class UserDto {
+  @Transform(({ value }) =>
+    typeof value === 'string' ? value.trim().toLowerCase() : value
+  )
   @IsEmail()
   @IsOptional()
+  @MaxLength(254)
   email!: string
 
   @IsString()
@@ -29,6 +34,7 @@ export class UserDto {
   windowDirections?: string[]
 
   @IsOptional()
+  @MaxLength(128)
   @MinLength(6, {
     message: 'Password must be at least 6 characters long'
   })
