@@ -335,6 +335,39 @@ export class UserPlantService {
     })
   }
 
+  async getUserPhotoUsages(userId: string) {
+    return this.prisma.userPlant.findMany({
+      where: {
+        userId,
+        photoUrl: {
+          not: null
+        }
+      },
+      select: {
+        id: true,
+        nickname: true,
+        plantName: true,
+        photoUrl: true
+      }
+    })
+  }
+
+  async getAllPhotoUsages() {
+    return this.prisma.userPlant.findMany({
+      where: {
+        photoUrl: {
+          not: null
+        }
+      },
+      select: {
+        id: true,
+        nickname: true,
+        plantName: true,
+        photoUrl: true
+      }
+    })
+  }
+
   async getById(id: string, userId: string) {
     return this.prisma.userPlant.findFirst({
       where: {

@@ -16,7 +16,12 @@ import {
   ValidationPipe
 } from '@nestjs/common'
 import { FileInterceptor } from '@nestjs/platform-express'
-import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
+import {
+  DeleteObjectCommand,
+  ListObjectsV2Command,
+  PutObjectCommand,
+  S3Client
+} from '@aws-sdk/client-s3'
 import { ConfigService } from '@nestjs/config'
 import { randomUUID } from 'crypto'
 import { memoryStorage } from 'multer'
@@ -42,6 +47,19 @@ type UploadedPlantPhoto = {
   originalname: string
   mimetype: string
   buffer: Buffer
+}
+
+type PlantPhotoUsage = {
+  id: string
+  nickname: string | null
+  plantName: string | null
+  photoUrl: string | null
+}
+
+type StoredPhotoObject = {
+  key: string
+  size: number | null
+  uploadedAt: Date | null
 }
 
 @Controller('user/plants')
@@ -79,6 +97,85 @@ export class UserPlantController {
       bucket,
       publicUrl: publicUrl.endsWith('/') ? publicUrl : `${publicUrl}/`
     }
+  }
+
+  private getPhotoUrl(key: string, publicUrl: string) {
+    return new URL(key, publicUrl).toString()
+  }
+
+  private getPhotoKeyFromUrl(photoUrl: string, publicUrl: string) {
+    try {
+      const photoUrlObject = new URL(photoUrl)
+      const publicUrlObject = new URL(publicUrl)
+      const publicPath = publicUrlObject.pathname.endsWith('/')
+        ? publicUrlObject.pathname
+        : `${publicUrlObject.pathname}/`
+
+      if (photoUrlObject.origin !== publicUrlObject.origin) return null
+      if (!photoUrlObject.pathname.startsWith(publicPath)) return null
+
+      const key = decodeURIComponent(
+        photoUrlObject.pathname.slice(publicPath.length)
+      )
+
+      return key || null
+    } catch {
+      return null
+    }
+  }
+
+  private getUsageByPhotoKey(
+    photoUsages: PlantPhotoUsage[],
+    publicUrl: string
+  ) {
+    const usageByKey = new Map<string, PlantPhotoUsage>()
+
+    photoUsages.forEach(usage => {
+      if (!usage.photoUrl) return
+
+      const key = this.getPhotoKeyFromUrl(usage.photoUrl, publicUrl)
+
+      if (key && !usageByKey.has(key)) usageByKey.set(key, usage)
+    })
+
+    return usageByKey
+  }
+
+  private isLegacyPlantPhotoKey(key: string) {
+    const legacyPrefix = 'plants/'
+
+    if (!key.startsWith(legacyPrefix)) return false
+
+    return !key.slice(legacyPrefix.length).includes('/')
+  }
+
+  private async listStoredPhotos(bucket: string, prefix: string) {
+    const photos: StoredPhotoObject[] = []
+    let continuationToken: string | undefined
+
+    do {
+      const response = await this.s3Client.send(
+        new ListObjectsV2Command({
+          Bucket: bucket,
+          Prefix: prefix,
+          ContinuationToken: continuationToken
+        })
+      )
+
+      response.Contents?.forEach(item => {
+        if (!item.Key || item.Key.endsWith('/')) return
+
+        photos.push({
+          key: item.Key,
+          size: item.Size ?? null,
+          uploadedAt: item.LastModified ?? null
+        })
+      })
+
+      continuationToken = response.NextContinuationToken
+    } while (continuationToken)
+
+    return photos
   }
 
   @Get()
@@ -178,14 +275,17 @@ export class UserPlantController {
       }
     })
   )
-  async uploadPhoto(@UploadedFile() file?: UploadedPlantPhoto) {
+  async uploadPhoto(
+    @CurrentUser('id') userId: string,
+    @UploadedFile() file?: UploadedPlantPhoto
+  ) {
     if (!file) throw new BadRequestException('Photo file is required')
 
     const { bucket, publicUrl } = this.getS3Config()
     const extension =
       imageExtensionsByMimeType[file.mimetype] ||
       extname(file.originalname).toLowerCase()
-    const key = `plants/${Date.now()}-${randomUUID()}${extension}`
+    const key = `plants/${userId}/${Date.now()}-${randomUUID()}${extension}`
 
     await this.s3Client.send(
       new PutObjectCommand({
@@ -198,6 +298,113 @@ export class UserPlantController {
 
     return {
       url: new URL(key, publicUrl).toString()
+    }
+  }
+
+  @Get('photos')
+  @Auth()
+  async getPhotoGallery(@CurrentUser('id') userId: string) {
+    const { bucket, publicUrl } = this.getS3Config()
+    const userPrefix = `plants/${userId}/`
+    const [storedPhotos, userPhotoUsages] = await Promise.all([
+      this.listStoredPhotos(bucket, 'plants/'),
+      this.userPlantService.getUserPhotoUsages(userId)
+    ])
+    const photosByKey = new Map<string, StoredPhotoObject>()
+    const usageByKey = this.getUsageByPhotoKey(userPhotoUsages, publicUrl)
+
+    storedPhotos
+      .filter(
+        photo =>
+          photo.key.startsWith(userPrefix) || this.isLegacyPlantPhotoKey(photo.key)
+      )
+      .forEach(photo => {
+        photosByKey.set(photo.key, photo)
+      })
+
+    userPhotoUsages.forEach(usage => {
+      if (!usage.photoUrl) return
+
+      const key = this.getPhotoKeyFromUrl(usage.photoUrl, publicUrl)
+
+      if (!key || photosByKey.has(key)) return
+
+      photosByKey.set(key, {
+        key,
+        size: null,
+        uploadedAt: null
+      })
+    })
+
+    return Array.from(photosByKey.values())
+      .map(photo => {
+        const usage = usageByKey.get(photo.key)
+
+        return {
+          key: photo.key,
+          url: this.getPhotoUrl(photo.key, publicUrl),
+          size: photo.size,
+          uploadedAt: photo.uploadedAt?.toISOString() ?? null,
+          isUsed: Boolean(usage),
+          usedByPlant: usage
+            ? {
+                id: usage.id,
+                nickname: usage.nickname,
+                plantName: usage.plantName
+              }
+            : null
+        }
+      })
+      .sort((left, right) => {
+        const leftTime = left.uploadedAt ? new Date(left.uploadedAt).getTime() : 0
+        const rightTime = right.uploadedAt
+          ? new Date(right.uploadedAt).getTime()
+          : 0
+
+        return rightTime - leftTime
+      })
+  }
+
+  @HttpCode(200)
+  @Delete('photos')
+  @Auth()
+  async deletePhoto(
+    @CurrentUser('id') userId: string,
+    @Body('url') photoUrl?: string
+  ) {
+    if (!photoUrl) throw new BadRequestException('Photo url is required')
+
+    const { bucket, publicUrl } = this.getS3Config()
+    const key = this.getPhotoKeyFromUrl(photoUrl, publicUrl)
+
+    if (
+      !key ||
+      (!key.startsWith(`plants/${userId}/`) && !this.isLegacyPlantPhotoKey(key))
+    ) {
+      throw new BadRequestException('Photo is not available for deletion')
+    }
+
+    const allPhotoUsages = await this.userPlantService.getAllPhotoUsages()
+    const isUsed = allPhotoUsages.some(usage => {
+      if (!usage.photoUrl) return false
+
+      return this.getPhotoKeyFromUrl(usage.photoUrl, publicUrl) === key
+    })
+
+    if (isUsed) {
+      throw new BadRequestException('Photo is used by a plant')
+    }
+
+    await this.s3Client.send(
+      new DeleteObjectCommand({
+        Bucket: bucket,
+        Key: key
+      })
+    )
+
+    return {
+      deleted: true,
+      url: photoUrl
     }
   }
 
