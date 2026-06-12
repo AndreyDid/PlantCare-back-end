@@ -37,4 +37,8 @@ export class CreatePlantCareEventDto {
   @IsInt()
   @Min(1)
   amountMl?: number | null
+
+  @IsOptional()
+  @IsString()
+  photoUrl?: string | null
 }

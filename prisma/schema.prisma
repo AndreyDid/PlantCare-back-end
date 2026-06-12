@@ -124,6 +124,7 @@ model PlantCareEvent {
   description String?
   eventAt     DateTime @default(now()) @map("event_at")
   amountMl    Int?     @map("amount_ml")
+  photoUrl    String?  @map("photo_url")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")

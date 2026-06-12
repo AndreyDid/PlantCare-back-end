@@ -161,6 +161,7 @@ export const PlantCareEventScalarFieldEnum = {
   description: 'description',
   eventAt: 'eventAt',
   amountMl: 'amountMl',
+  photoUrl: 'photoUrl',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

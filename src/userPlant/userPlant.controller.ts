@@ -53,8 +53,25 @@ type PlantPhotoUsage = {
   id: string
   nickname: string | null
   plantName: string | null
+  location: string | null
   photoUrl: string | null
 }
+
+type CareEventPhotoUsage = {
+  id: string
+  type: string
+  title: string | null
+  eventAt: Date
+  photoUrl: string | null
+  plant: {
+    id: string
+    nickname: string | null
+    plantName: string | null
+    location: string | null
+  }
+}
+
+type PhotoUsageWithUrl = PlantPhotoUsage | CareEventPhotoUsage
 
 type StoredPhotoObject = {
   key: string
@@ -103,6 +120,44 @@ export class UserPlantController {
     return new URL(key, publicUrl).toString()
   }
 
+  private getPhotoExtension(file: UploadedPlantPhoto) {
+    return (
+      imageExtensionsByMimeType[file.mimetype] ||
+      extname(file.originalname).toLowerCase()
+    )
+  }
+
+  private getSafeS3PathSegment(value?: string | null) {
+    const slug = value
+      ?.trim()
+      .toLowerCase()
+      .normalize('NFKC')
+      .replace(/[^\p{L}\p{N}]+/gu, '-')
+      .replace(/^-+|-+$/g, '')
+
+    return slug || 'plant'
+  }
+
+  private getCareEventPhotoKey({
+    extension,
+    plant,
+    userId
+  }: {
+    extension: string
+    plant: {
+      id: string
+      nickname: string | null
+      plantName: string | null
+    }
+    userId: string
+  }) {
+    const plantSlug = this.getSafeS3PathSegment(
+      plant.nickname || plant.plantName
+    )
+
+    return `plants/${userId}/${plantSlug}-${plant.id}/notes/${Date.now()}-${randomUUID()}${extension}`
+  }
+
   private getPhotoKeyFromUrl(photoUrl: string, publicUrl: string) {
     try {
       const photoUrlObject = new URL(photoUrl)
@@ -124,11 +179,11 @@ export class UserPlantController {
     }
   }
 
-  private getUsageByPhotoKey(
-    photoUsages: PlantPhotoUsage[],
+  private getUsageByPhotoKey<T extends PhotoUsageWithUrl>(
+    photoUsages: T[],
     publicUrl: string
   ) {
-    const usageByKey = new Map<string, PlantPhotoUsage>()
+    const usageByKey = new Map<string, T>()
 
     photoUsages.forEach(usage => {
       if (!usage.photoUrl) return
@@ -282,9 +337,7 @@ export class UserPlantController {
     if (!file) throw new BadRequestException('Photo file is required')
 
     const { bucket, publicUrl } = this.getS3Config()
-    const extension =
-      imageExtensionsByMimeType[file.mimetype] ||
-      extname(file.originalname).toLowerCase()
+    const extension = this.getPhotoExtension(file)
     const key = `plants/${userId}/${Date.now()}-${randomUUID()}${extension}`
 
     await this.s3Client.send(
@@ -297,7 +350,58 @@ export class UserPlantController {
     )
 
     return {
-      url: new URL(key, publicUrl).toString()
+      url: this.getPhotoUrl(key, publicUrl)
+    }
+  }
+
+  @HttpCode(200)
+  @Post(':id/events/upload-photo')
+  @Auth()
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: memoryStorage(),
+      fileFilter: (_request, file, callback) => {
+        if (!imageExtensionsByMimeType[file.mimetype]) {
+          callback(
+            new BadRequestException('Only image files can be uploaded'),
+            false
+          )
+          return
+        }
+
+        callback(null, true)
+      },
+      limits: {
+        fileSize: 5 * 1024 * 1024
+      }
+    })
+  )
+  async uploadCareEventPhoto(
+    @Param('id') id: string,
+    @CurrentUser('id') userId: string,
+    @UploadedFile() file?: UploadedPlantPhoto
+  ) {
+    if (!file) throw new BadRequestException('Photo file is required')
+
+    const plant = await this.userPlantService.getPlantPhotoTarget(id, userId)
+    const { bucket, publicUrl } = this.getS3Config()
+    const key = this.getCareEventPhotoKey({
+      extension: this.getPhotoExtension(file),
+      plant,
+      userId
+    })
+
+    await this.s3Client.send(
+      new PutObjectCommand({
+        Bucket: bucket,
+        Key: key,
+        Body: file.buffer,
+        ContentType: file.mimetype
+      })
+    )
+
+    return {
+      url: this.getPhotoUrl(key, publicUrl)
     }
   }
 
@@ -306,12 +410,18 @@ export class UserPlantController {
   async getPhotoGallery(@CurrentUser('id') userId: string) {
     const { bucket, publicUrl } = this.getS3Config()
     const userPrefix = `plants/${userId}/`
-    const [storedPhotos, userPhotoUsages] = await Promise.all([
-      this.listStoredPhotos(bucket, 'plants/'),
-      this.userPlantService.getUserPhotoUsages(userId)
-    ])
+    const [storedPhotos, userPhotoUsages, userCareEventPhotoUsages] =
+      await Promise.all([
+        this.listStoredPhotos(bucket, 'plants/'),
+        this.userPlantService.getUserPhotoUsages(userId),
+        this.userPlantService.getUserCareEventPhotoUsages(userId)
+      ])
     const photosByKey = new Map<string, StoredPhotoObject>()
-    const usageByKey = this.getUsageByPhotoKey(userPhotoUsages, publicUrl)
+    const plantUsageByKey = this.getUsageByPhotoKey(userPhotoUsages, publicUrl)
+    const careEventUsageByKey = this.getUsageByPhotoKey(
+      userCareEventPhotoUsages,
+      publicUrl
+    )
 
     storedPhotos
       .filter(
@@ -322,7 +432,7 @@ export class UserPlantController {
         photosByKey.set(photo.key, photo)
       })
 
-    userPhotoUsages.forEach(usage => {
+    ;[...userPhotoUsages, ...userCareEventPhotoUsages].forEach(usage => {
       if (!usage.photoUrl) return
 
       const key = this.getPhotoKeyFromUrl(usage.photoUrl, publicUrl)
@@ -338,19 +448,35 @@ export class UserPlantController {
 
     return Array.from(photosByKey.values())
       .map(photo => {
-        const usage = usageByKey.get(photo.key)
+        const plantUsage = plantUsageByKey.get(photo.key)
+        const careEventUsage = careEventUsageByKey.get(photo.key)
+        const usedByPlant = careEventUsage?.plant ?? plantUsage ?? null
 
         return {
           key: photo.key,
           url: this.getPhotoUrl(photo.key, publicUrl),
           size: photo.size,
           uploadedAt: photo.uploadedAt?.toISOString() ?? null,
-          isUsed: Boolean(usage),
-          usedByPlant: usage
+          source: careEventUsage
+            ? 'careEvent'
+            : plantUsage
+              ? 'plantProfile'
+              : 'uploaded',
+          isUsed: Boolean(plantUsage || careEventUsage),
+          usedByPlant: usedByPlant
             ? {
-                id: usage.id,
-                nickname: usage.nickname,
-                plantName: usage.plantName
+                id: usedByPlant.id,
+                nickname: usedByPlant.nickname,
+                plantName: usedByPlant.plantName,
+                location: usedByPlant.location
+              }
+            : null,
+          usedByCareEvent: careEventUsage
+            ? {
+                id: careEventUsage.id,
+                type: careEventUsage.type,
+                title: careEventUsage.title,
+                eventAt: careEventUsage.eventAt.toISOString()
               }
             : null
         }
@@ -384,15 +510,18 @@ export class UserPlantController {
       throw new BadRequestException('Photo is not available for deletion')
     }
 
-    const allPhotoUsages = await this.userPlantService.getAllPhotoUsages()
-    const isUsed = allPhotoUsages.some(usage => {
+    const [allPhotoUsages, allCareEventPhotoUsages] = await Promise.all([
+      this.userPlantService.getAllPhotoUsages(),
+      this.userPlantService.getAllCareEventPhotoUsages()
+    ])
+    const isUsed = [...allPhotoUsages, ...allCareEventPhotoUsages].some(usage => {
       if (!usage.photoUrl) return false
 
       return this.getPhotoKeyFromUrl(usage.photoUrl, publicUrl) === key
     })
 
     if (isUsed) {
-      throw new BadRequestException('Photo is used by a plant')
+      throw new BadRequestException('Photo is used by a plant or care event')
     }
 
     await this.s3Client.send(

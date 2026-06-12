@@ -347,7 +347,36 @@ export class UserPlantService {
         id: true,
         nickname: true,
         plantName: true,
+        location: true,
         photoUrl: true
+      }
+    })
+  }
+
+  async getUserCareEventPhotoUsages(userId: string) {
+    return this.prisma.plantCareEvent.findMany({
+      where: {
+        photoUrl: {
+          not: null
+        },
+        plant: {
+          userId
+        }
+      },
+      select: {
+        id: true,
+        type: true,
+        title: true,
+        eventAt: true,
+        photoUrl: true,
+        plant: {
+          select: {
+            id: true,
+            nickname: true,
+            plantName: true,
+            location: true
+          }
+        }
       }
     })
   }
@@ -363,9 +392,42 @@ export class UserPlantService {
         id: true,
         nickname: true,
         plantName: true,
+        location: true,
         photoUrl: true
       }
     })
+  }
+
+  async getAllCareEventPhotoUsages() {
+    return this.prisma.plantCareEvent.findMany({
+      where: {
+        photoUrl: {
+          not: null
+        }
+      },
+      select: {
+        id: true,
+        photoUrl: true
+      }
+    })
+  }
+
+  async getPlantPhotoTarget(plantId: string, userId: string) {
+    const plant = await this.prisma.userPlant.findFirst({
+      where: {
+        id: plantId,
+        userId
+      },
+      select: {
+        id: true,
+        nickname: true,
+        plantName: true
+      }
+    })
+
+    if (!plant) throw new NotFoundException('Plant not found')
+
+    return plant
   }
 
   async getById(id: string, userId: string) {
@@ -497,7 +559,8 @@ export class UserPlantService {
           title: dto.title?.trim() || this.getCareEventTitle(dto.type),
           description: dto.description?.trim() || null,
           eventAt,
-          amountMl: dto.amountMl ?? null
+          amountMl: dto.amountMl ?? null,
+          photoUrl: dto.photoUrl?.trim() || null
         }
       })
     })
