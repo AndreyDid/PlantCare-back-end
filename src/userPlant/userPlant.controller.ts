@@ -34,6 +34,7 @@ import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 import { WaterUserPlantsDto } from './dto/water-user-plants.dto'
 import { CreatePlantCareEventDto } from './dto/create-plant-care-event.dto'
 import { GetPlantCareEventsDto } from './dto/get-plant-care-events.dto'
+import { UpdatePlantCareEventDto } from './dto/update-plant-care-event.dto'
 import { ExistingPlantAiDto, SuggestPlantCareDto } from './dto/plant-ai.dto'
 import { PlantAiService } from './plant-ai.service'
 
@@ -572,6 +573,19 @@ export class UserPlantController {
     @Body() dto: CreatePlantCareEventDto
   ) {
     return this.userPlantService.createCareEvent(id, userId, dto)
+  }
+
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
+  @Put(':id/events/:eventId')
+  @Auth()
+  async updateCareEvent(
+    @Param('id') id: string,
+    @Param('eventId') eventId: string,
+    @CurrentUser('id') userId: string,
+    @Body() dto: UpdatePlantCareEventDto
+  ) {
+    return this.userPlantService.updateCareEvent(id, eventId, userId, dto)
   }
 
   @HttpCode(200)

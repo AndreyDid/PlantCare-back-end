@@ -6,6 +6,7 @@ import {
   PlantCareEventType
 } from './dto/create-plant-care-event.dto'
 import { GetPlantCareEventsDto } from './dto/get-plant-care-events.dto'
+import { UpdatePlantCareEventDto } from './dto/update-plant-care-event.dto'
 import { UserPlantDto } from './dto/userPlant.dto'
 import { UpdateUserPlantDto } from './dto/update-userPlant.dto'
 import { CurrentWeatherSummary, WeatherService } from './weather.service'
@@ -216,6 +217,91 @@ export class UserPlantService {
 
       return updatedPlants
     })
+  }
+
+  private async syncPlantCareDates(
+    tx: Prisma.TransactionClient,
+    plantId: string,
+    plant: {
+      lastWateredAt: Date | null
+      nextWateringAt: Date | null
+      wateringIntervalDays: number | null
+      wateringIntervalSpringDays: number | null
+      wateringIntervalSummerDays: number | null
+      wateringIntervalAutumnDays: number | null
+      wateringIntervalWinterDays: number | null
+      fertilizingIntervalDays: number | null
+    },
+    affectedTypes: PlantCareEventType[]
+  ) {
+    const typeSet = new Set(affectedTypes)
+
+    if (typeSet.has('WATERING')) {
+      const latestWatering = await tx.plantCareEvent.findFirst({
+        where: {
+          plantId,
+          type: 'WATERING'
+        },
+        orderBy: this.getCareEventOrderBy()
+      })
+
+      await tx.userPlant.update({
+        where: {
+          id: plantId
+        },
+        data: {
+          lastWateredAt: latestWatering?.eventAt ?? null,
+          nextWateringAt: latestWatering
+            ? this.getNextWateringDate(latestWatering.eventAt, {
+                ...plant,
+                lastWateredAt: null,
+                nextWateringAt: null
+              })
+            : null
+        }
+      })
+    }
+
+    if (typeSet.has('FERTILIZING')) {
+      const latestFertilizing = await tx.plantCareEvent.findFirst({
+        where: {
+          plantId,
+          type: 'FERTILIZING'
+        },
+        orderBy: this.getCareEventOrderBy()
+      })
+
+      await tx.userPlant.update({
+        where: {
+          id: plantId
+        },
+        data: {
+          lastFertilizedAt: latestFertilizing?.eventAt ?? null,
+          nextFertilizingAt: latestFertilizing
+            ? this.getNextFertilizingDate(latestFertilizing.eventAt, plant)
+            : null
+        }
+      })
+    }
+
+    if (typeSet.has('REPOTTING')) {
+      const latestRepotting = await tx.plantCareEvent.findFirst({
+        where: {
+          plantId,
+          type: 'REPOTTING'
+        },
+        orderBy: this.getCareEventOrderBy()
+      })
+
+      await tx.userPlant.update({
+        where: {
+          id: plantId
+        },
+        data: {
+          lastRepottedAt: latestRepotting?.eventAt ?? null
+        }
+      })
+    }
   }
 
   private getWeatherWateringAdvice({
@@ -563,6 +649,65 @@ export class UserPlantService {
           photoUrl: dto.photoUrl?.trim() || null
         }
       })
+    })
+
+    return this.getById(plantId, userId)
+  }
+
+  async updateCareEvent(
+    plantId: string,
+    eventId: string,
+    userId: string,
+    dto: UpdatePlantCareEventDto
+  ) {
+    const plant = await this.prisma.userPlant.findFirst({
+      where: {
+        id: plantId,
+        userId
+      }
+    })
+
+    if (!plant) throw new NotFoundException('Plant not found')
+
+    const careEvent = await this.prisma.plantCareEvent.findFirst({
+      where: {
+        id: eventId,
+        plantId
+      }
+    })
+
+    if (!careEvent) throw new NotFoundException('Care event not found')
+
+    const eventType = (dto.type ?? careEvent.type) as PlantCareEventType
+    const updateData: Prisma.PlantCareEventUncheckedUpdateInput = {}
+
+    if ('type' in dto && dto.type) updateData.type = dto.type
+    if ('title' in dto) {
+      updateData.title = dto.title?.trim() || this.getCareEventTitle(eventType)
+    } else if ('type' in dto && dto.type) {
+      updateData.title = this.getCareEventTitle(eventType)
+    }
+    if ('description' in dto) {
+      updateData.description = dto.description?.trim() || null
+    }
+    if ('eventAt' in dto) {
+      updateData.eventAt = dto.eventAt ? new Date(dto.eventAt) : careEvent.eventAt
+    }
+    if ('amountMl' in dto) updateData.amountMl = dto.amountMl ?? null
+    if ('photoUrl' in dto) updateData.photoUrl = dto.photoUrl?.trim() || null
+
+    await this.prisma.$transaction(async tx => {
+      await tx.plantCareEvent.update({
+        where: {
+          id: eventId
+        },
+        data: updateData
+      })
+
+      await this.syncPlantCareDates(tx, plantId, plant, [
+        careEvent.type as PlantCareEventType,
+        eventType
+      ])
     })
 
     return this.getById(plantId, userId)
