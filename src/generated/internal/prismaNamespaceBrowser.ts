@@ -82,9 +82,9 @@ export const UserScalarFieldEnum = {
   updatedAt: 'updatedAt',
   email: 'email',
   name: 'name',
+  password: 'password',
   city: 'city',
   windowDirections: 'windowDirections',
-  password: 'password',
   refreshTokenHash: 'refreshTokenHash'
 } as const
 
@@ -109,35 +109,35 @@ export type PlantTypeScalarFieldEnum = (typeof PlantTypeScalarFieldEnum)[keyof t
 export const UserPlantScalarFieldEnum = {
   id: 'id',
   nickname: 'nickname',
-  plantName: 'plantName',
-  location: 'location',
-  photoUrl: 'photoUrl',
   plantTypeId: 'plantTypeId',
   userId: 'userId',
   lastWateredAt: 'lastWateredAt',
   nextWateringAt: 'nextWateringAt',
-  wateringIntervalDays: 'wateringIntervalDays',
-  wateringIntervalSpringDays: 'wateringIntervalSpringDays',
-  wateringIntervalSummerDays: 'wateringIntervalSummerDays',
-  wateringIntervalAutumnDays: 'wateringIntervalAutumnDays',
-  wateringIntervalWinterDays: 'wateringIntervalWinterDays',
-  lightLevel: 'lightLevel',
-  temperatureMin: 'temperatureMin',
-  temperatureMax: 'temperatureMax',
-  humidityMin: 'humidityMin',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  photoUrl: 'photoUrl',
+  plantName: 'plantName',
+  fertilizingIntervalDays: 'fertilizingIntervalDays',
   humidityMax: 'humidityMax',
-  potType: 'potType',
-  potSize: 'potSize',
-  soilType: 'soilType',
+  humidityMin: 'humidityMin',
+  lastFertilizedAt: 'lastFertilizedAt',
   lastRepottedAt: 'lastRepottedAt',
+  lightLevel: 'lightLevel',
+  nextFertilizingAt: 'nextFertilizingAt',
   nextRepottingAt: 'nextRepottingAt',
+  potSize: 'potSize',
+  potType: 'potType',
+  soilType: 'soilType',
+  temperatureMax: 'temperatureMax',
+  temperatureMin: 'temperatureMin',
   wateringAmountMl: 'wateringAmountMl',
   wateringNotes: 'wateringNotes',
-  fertilizingIntervalDays: 'fertilizingIntervalDays',
-  lastFertilizedAt: 'lastFertilizedAt',
-  nextFertilizingAt: 'nextFertilizingAt',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  wateringIntervalDays: 'wateringIntervalDays',
+  wateringIntervalSummerDays: 'wateringIntervalSummerDays',
+  wateringIntervalWinterDays: 'wateringIntervalWinterDays',
+  wateringIntervalSpringDays: 'wateringIntervalSpringDays',
+  wateringIntervalAutumnDays: 'wateringIntervalAutumnDays',
+  location: 'location'
 } as const
 
 export type UserPlantScalarFieldEnum = (typeof UserPlantScalarFieldEnum)[keyof typeof UserPlantScalarFieldEnum]
@@ -161,9 +161,9 @@ export const PlantCareEventScalarFieldEnum = {
   description: 'description',
   eventAt: 'eventAt',
   amountMl: 'amountMl',
-  photoUrl: 'photoUrl',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  photoUrl: 'photoUrl'
 } as const
 
 export type PlantCareEventScalarFieldEnum = (typeof PlantCareEventScalarFieldEnum)[keyof typeof PlantCareEventScalarFieldEnum]

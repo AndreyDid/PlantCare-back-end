@@ -42,9 +42,9 @@ export type PlantCareEventMinAggregateOutputType = {
   description: string | null
   eventAt: Date | null
   amountMl: number | null
-  photoUrl: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  photoUrl: string | null
 }
 
 export type PlantCareEventMaxAggregateOutputType = {
@@ -55,9 +55,9 @@ export type PlantCareEventMaxAggregateOutputType = {
   description: string | null
   eventAt: Date | null
   amountMl: number | null
-  photoUrl: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  photoUrl: string | null
 }
 
 export type PlantCareEventCountAggregateOutputType = {
@@ -68,9 +68,9 @@ export type PlantCareEventCountAggregateOutputType = {
   description: number
   eventAt: number
   amountMl: number
-  photoUrl: number
   createdAt: number
   updatedAt: number
+  photoUrl: number
   _all: number
 }
 
@@ -91,9 +91,9 @@ export type PlantCareEventMinAggregateInputType = {
   description?: true
   eventAt?: true
   amountMl?: true
-  photoUrl?: true
   createdAt?: true
   updatedAt?: true
+  photoUrl?: true
 }
 
 export type PlantCareEventMaxAggregateInputType = {
@@ -104,9 +104,9 @@ export type PlantCareEventMaxAggregateInputType = {
   description?: true
   eventAt?: true
   amountMl?: true
-  photoUrl?: true
   createdAt?: true
   updatedAt?: true
+  photoUrl?: true
 }
 
 export type PlantCareEventCountAggregateInputType = {
@@ -117,9 +117,9 @@ export type PlantCareEventCountAggregateInputType = {
   description?: true
   eventAt?: true
   amountMl?: true
-  photoUrl?: true
   createdAt?: true
   updatedAt?: true
+  photoUrl?: true
   _all?: true
 }
 
@@ -217,9 +217,9 @@ export type PlantCareEventGroupByOutputType = {
   description: string | null
   eventAt: Date
   amountMl: number | null
-  photoUrl: string | null
   createdAt: Date
   updatedAt: Date
+  photoUrl: string | null
   _count: PlantCareEventCountAggregateOutputType | null
   _avg: PlantCareEventAvgAggregateOutputType | null
   _sum: PlantCareEventSumAggregateOutputType | null
@@ -253,9 +253,9 @@ export type PlantCareEventWhereInput = {
   description?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
   eventAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
   amountMl?: Prisma.IntNullableFilter<"PlantCareEvent"> | number | null
-  photoUrl?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
   createdAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
+  photoUrl?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
   plant?: Prisma.XOR<Prisma.UserPlantScalarRelationFilter, Prisma.UserPlantWhereInput>
 }
 
@@ -267,9 +267,9 @@ export type PlantCareEventOrderByWithRelationInput = {
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   eventAt?: Prisma.SortOrder
   amountMl?: Prisma.SortOrderInput | Prisma.SortOrder
-  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   plant?: Prisma.UserPlantOrderByWithRelationInput
 }
 
@@ -284,9 +284,9 @@ export type PlantCareEventWhereUniqueInput = Prisma.AtLeast<{
   description?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
   eventAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
   amountMl?: Prisma.IntNullableFilter<"PlantCareEvent"> | number | null
-  photoUrl?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
   createdAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
+  photoUrl?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
   plant?: Prisma.XOR<Prisma.UserPlantScalarRelationFilter, Prisma.UserPlantWhereInput>
 }, "id">
 
@@ -298,9 +298,9 @@ export type PlantCareEventOrderByWithAggregationInput = {
   description?: Prisma.SortOrderInput | Prisma.SortOrder
   eventAt?: Prisma.SortOrder
   amountMl?: Prisma.SortOrderInput | Prisma.SortOrder
-  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.PlantCareEventCountOrderByAggregateInput
   _avg?: Prisma.PlantCareEventAvgOrderByAggregateInput
   _max?: Prisma.PlantCareEventMaxOrderByAggregateInput
@@ -319,9 +319,9 @@ export type PlantCareEventScalarWhereWithAggregatesInput = {
   description?: Prisma.StringNullableWithAggregatesFilter<"PlantCareEvent"> | string | null
   eventAt?: Prisma.DateTimeWithAggregatesFilter<"PlantCareEvent"> | Date | string
   amountMl?: Prisma.IntNullableWithAggregatesFilter<"PlantCareEvent"> | number | null
-  photoUrl?: Prisma.StringNullableWithAggregatesFilter<"PlantCareEvent"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"PlantCareEvent"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"PlantCareEvent"> | Date | string
+  photoUrl?: Prisma.StringNullableWithAggregatesFilter<"PlantCareEvent"> | string | null
 }
 
 export type PlantCareEventCreateInput = {
@@ -331,9 +331,9 @@ export type PlantCareEventCreateInput = {
   description?: string | null
   eventAt?: Date | string
   amountMl?: number | null
-  photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
   plant: Prisma.UserPlantCreateNestedOneWithoutCareEventsInput
 }
 
@@ -345,9 +345,9 @@ export type PlantCareEventUncheckedCreateInput = {
   description?: string | null
   eventAt?: Date | string
   amountMl?: number | null
-  photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
 }
 
 export type PlantCareEventUpdateInput = {
@@ -357,9 +357,9 @@ export type PlantCareEventUpdateInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   eventAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plant?: Prisma.UserPlantUpdateOneRequiredWithoutCareEventsNestedInput
 }
 
@@ -371,9 +371,9 @@ export type PlantCareEventUncheckedUpdateInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   eventAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type PlantCareEventCreateManyInput = {
@@ -384,9 +384,9 @@ export type PlantCareEventCreateManyInput = {
   description?: string | null
   eventAt?: Date | string
   amountMl?: number | null
-  photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
 }
 
 export type PlantCareEventUpdateManyMutationInput = {
@@ -396,9 +396,9 @@ export type PlantCareEventUpdateManyMutationInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   eventAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type PlantCareEventUncheckedUpdateManyInput = {
@@ -409,9 +409,9 @@ export type PlantCareEventUncheckedUpdateManyInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   eventAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type PlantCareEventListRelationFilter = {
@@ -432,9 +432,9 @@ export type PlantCareEventCountOrderByAggregateInput = {
   description?: Prisma.SortOrder
   eventAt?: Prisma.SortOrder
   amountMl?: Prisma.SortOrder
-  photoUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
 }
 
 export type PlantCareEventAvgOrderByAggregateInput = {
@@ -449,9 +449,9 @@ export type PlantCareEventMaxOrderByAggregateInput = {
   description?: Prisma.SortOrder
   eventAt?: Prisma.SortOrder
   amountMl?: Prisma.SortOrder
-  photoUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
 }
 
 export type PlantCareEventMinOrderByAggregateInput = {
@@ -462,9 +462,9 @@ export type PlantCareEventMinOrderByAggregateInput = {
   description?: Prisma.SortOrder
   eventAt?: Prisma.SortOrder
   amountMl?: Prisma.SortOrder
-  photoUrl?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
 }
 
 export type PlantCareEventSumOrderByAggregateInput = {
@@ -520,9 +520,9 @@ export type PlantCareEventCreateWithoutPlantInput = {
   description?: string | null
   eventAt?: Date | string
   amountMl?: number | null
-  photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
 }
 
 export type PlantCareEventUncheckedCreateWithoutPlantInput = {
@@ -532,9 +532,9 @@ export type PlantCareEventUncheckedCreateWithoutPlantInput = {
   description?: string | null
   eventAt?: Date | string
   amountMl?: number | null
-  photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
 }
 
 export type PlantCareEventCreateOrConnectWithoutPlantInput = {
@@ -574,9 +574,9 @@ export type PlantCareEventScalarWhereInput = {
   description?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
   eventAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
   amountMl?: Prisma.IntNullableFilter<"PlantCareEvent"> | number | null
-  photoUrl?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
   createdAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"PlantCareEvent"> | Date | string
+  photoUrl?: Prisma.StringNullableFilter<"PlantCareEvent"> | string | null
 }
 
 export type PlantCareEventCreateManyPlantInput = {
@@ -586,9 +586,9 @@ export type PlantCareEventCreateManyPlantInput = {
   description?: string | null
   eventAt?: Date | string
   amountMl?: number | null
-  photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
 }
 
 export type PlantCareEventUpdateWithoutPlantInput = {
@@ -598,9 +598,9 @@ export type PlantCareEventUpdateWithoutPlantInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   eventAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type PlantCareEventUncheckedUpdateWithoutPlantInput = {
@@ -610,9 +610,9 @@ export type PlantCareEventUncheckedUpdateWithoutPlantInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   eventAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type PlantCareEventUncheckedUpdateManyWithoutPlantInput = {
@@ -622,9 +622,9 @@ export type PlantCareEventUncheckedUpdateManyWithoutPlantInput = {
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   eventAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   amountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -637,9 +637,9 @@ export type PlantCareEventSelect<ExtArgs extends runtime.Types.Extensions.Intern
   description?: boolean
   eventAt?: boolean
   amountMl?: boolean
-  photoUrl?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  photoUrl?: boolean
   plant?: boolean | Prisma.UserPlantDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["plantCareEvent"]>
 
@@ -651,9 +651,9 @@ export type PlantCareEventSelectCreateManyAndReturn<ExtArgs extends runtime.Type
   description?: boolean
   eventAt?: boolean
   amountMl?: boolean
-  photoUrl?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  photoUrl?: boolean
   plant?: boolean | Prisma.UserPlantDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["plantCareEvent"]>
 
@@ -665,9 +665,9 @@ export type PlantCareEventSelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   description?: boolean
   eventAt?: boolean
   amountMl?: boolean
-  photoUrl?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  photoUrl?: boolean
   plant?: boolean | Prisma.UserPlantDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["plantCareEvent"]>
 
@@ -679,12 +679,12 @@ export type PlantCareEventSelectScalar = {
   description?: boolean
   eventAt?: boolean
   amountMl?: boolean
-  photoUrl?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  photoUrl?: boolean
 }
 
-export type PlantCareEventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "plantId" | "type" | "title" | "description" | "eventAt" | "amountMl" | "photoUrl" | "createdAt" | "updatedAt", ExtArgs["result"]["plantCareEvent"]>
+export type PlantCareEventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "plantId" | "type" | "title" | "description" | "eventAt" | "amountMl" | "createdAt" | "updatedAt" | "photoUrl", ExtArgs["result"]["plantCareEvent"]>
 export type PlantCareEventInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   plant?: boolean | Prisma.UserPlantDefaultArgs<ExtArgs>
 }
@@ -708,9 +708,9 @@ export type $PlantCareEventPayload<ExtArgs extends runtime.Types.Extensions.Inte
     description: string | null
     eventAt: Date
     amountMl: number | null
-    photoUrl: string | null
     createdAt: Date
     updatedAt: Date
+    photoUrl: string | null
   }, ExtArgs["result"]["plantCareEvent"]>
   composites: {}
 }
@@ -1142,9 +1142,9 @@ export interface PlantCareEventFieldRefs {
   readonly description: Prisma.FieldRef<"PlantCareEvent", 'String'>
   readonly eventAt: Prisma.FieldRef<"PlantCareEvent", 'DateTime'>
   readonly amountMl: Prisma.FieldRef<"PlantCareEvent", 'Int'>
-  readonly photoUrl: Prisma.FieldRef<"PlantCareEvent", 'String'>
   readonly createdAt: Prisma.FieldRef<"PlantCareEvent", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"PlantCareEvent", 'DateTime'>
+  readonly photoUrl: Prisma.FieldRef<"PlantCareEvent", 'String'>
 }
     
 

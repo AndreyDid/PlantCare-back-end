@@ -27,265 +27,265 @@ export type AggregateUserPlant = {
 }
 
 export type UserPlantAvgAggregateOutputType = {
-  wateringIntervalDays: number | null
-  wateringIntervalSpringDays: number | null
-  wateringIntervalSummerDays: number | null
-  wateringIntervalAutumnDays: number | null
-  wateringIntervalWinterDays: number | null
-  temperatureMin: number | null
-  temperatureMax: number | null
-  humidityMin: number | null
-  humidityMax: number | null
-  wateringAmountMl: number | null
   fertilizingIntervalDays: number | null
+  humidityMax: number | null
+  humidityMin: number | null
+  temperatureMax: number | null
+  temperatureMin: number | null
+  wateringAmountMl: number | null
+  wateringIntervalDays: number | null
+  wateringIntervalSummerDays: number | null
+  wateringIntervalWinterDays: number | null
+  wateringIntervalSpringDays: number | null
+  wateringIntervalAutumnDays: number | null
 }
 
 export type UserPlantSumAggregateOutputType = {
-  wateringIntervalDays: number | null
-  wateringIntervalSpringDays: number | null
-  wateringIntervalSummerDays: number | null
-  wateringIntervalAutumnDays: number | null
-  wateringIntervalWinterDays: number | null
-  temperatureMin: number | null
-  temperatureMax: number | null
-  humidityMin: number | null
-  humidityMax: number | null
-  wateringAmountMl: number | null
   fertilizingIntervalDays: number | null
+  humidityMax: number | null
+  humidityMin: number | null
+  temperatureMax: number | null
+  temperatureMin: number | null
+  wateringAmountMl: number | null
+  wateringIntervalDays: number | null
+  wateringIntervalSummerDays: number | null
+  wateringIntervalWinterDays: number | null
+  wateringIntervalSpringDays: number | null
+  wateringIntervalAutumnDays: number | null
 }
 
 export type UserPlantMinAggregateOutputType = {
   id: string | null
   nickname: string | null
-  plantName: string | null
-  location: string | null
-  photoUrl: string | null
   plantTypeId: string | null
   userId: string | null
   lastWateredAt: Date | null
   nextWateringAt: Date | null
-  wateringIntervalDays: number | null
-  wateringIntervalSpringDays: number | null
-  wateringIntervalSummerDays: number | null
-  wateringIntervalAutumnDays: number | null
-  wateringIntervalWinterDays: number | null
-  lightLevel: string | null
-  temperatureMin: number | null
-  temperatureMax: number | null
-  humidityMin: number | null
-  humidityMax: number | null
-  potType: string | null
-  potSize: string | null
-  soilType: string | null
-  lastRepottedAt: Date | null
-  nextRepottingAt: Date | null
-  wateringAmountMl: number | null
-  wateringNotes: string | null
-  fertilizingIntervalDays: number | null
-  lastFertilizedAt: Date | null
-  nextFertilizingAt: Date | null
   createdAt: Date | null
   updatedAt: Date | null
+  photoUrl: string | null
+  plantName: string | null
+  fertilizingIntervalDays: number | null
+  humidityMax: number | null
+  humidityMin: number | null
+  lastFertilizedAt: Date | null
+  lastRepottedAt: Date | null
+  lightLevel: string | null
+  nextFertilizingAt: Date | null
+  nextRepottingAt: Date | null
+  potSize: string | null
+  potType: string | null
+  soilType: string | null
+  temperatureMax: number | null
+  temperatureMin: number | null
+  wateringAmountMl: number | null
+  wateringNotes: string | null
+  wateringIntervalDays: number | null
+  wateringIntervalSummerDays: number | null
+  wateringIntervalWinterDays: number | null
+  wateringIntervalSpringDays: number | null
+  wateringIntervalAutumnDays: number | null
+  location: string | null
 }
 
 export type UserPlantMaxAggregateOutputType = {
   id: string | null
   nickname: string | null
-  plantName: string | null
-  location: string | null
-  photoUrl: string | null
   plantTypeId: string | null
   userId: string | null
   lastWateredAt: Date | null
   nextWateringAt: Date | null
-  wateringIntervalDays: number | null
-  wateringIntervalSpringDays: number | null
-  wateringIntervalSummerDays: number | null
-  wateringIntervalAutumnDays: number | null
-  wateringIntervalWinterDays: number | null
-  lightLevel: string | null
-  temperatureMin: number | null
-  temperatureMax: number | null
-  humidityMin: number | null
-  humidityMax: number | null
-  potType: string | null
-  potSize: string | null
-  soilType: string | null
-  lastRepottedAt: Date | null
-  nextRepottingAt: Date | null
-  wateringAmountMl: number | null
-  wateringNotes: string | null
-  fertilizingIntervalDays: number | null
-  lastFertilizedAt: Date | null
-  nextFertilizingAt: Date | null
   createdAt: Date | null
   updatedAt: Date | null
+  photoUrl: string | null
+  plantName: string | null
+  fertilizingIntervalDays: number | null
+  humidityMax: number | null
+  humidityMin: number | null
+  lastFertilizedAt: Date | null
+  lastRepottedAt: Date | null
+  lightLevel: string | null
+  nextFertilizingAt: Date | null
+  nextRepottingAt: Date | null
+  potSize: string | null
+  potType: string | null
+  soilType: string | null
+  temperatureMax: number | null
+  temperatureMin: number | null
+  wateringAmountMl: number | null
+  wateringNotes: string | null
+  wateringIntervalDays: number | null
+  wateringIntervalSummerDays: number | null
+  wateringIntervalWinterDays: number | null
+  wateringIntervalSpringDays: number | null
+  wateringIntervalAutumnDays: number | null
+  location: string | null
 }
 
 export type UserPlantCountAggregateOutputType = {
   id: number
   nickname: number
-  plantName: number
-  location: number
-  photoUrl: number
   plantTypeId: number
   userId: number
   lastWateredAt: number
   nextWateringAt: number
-  wateringIntervalDays: number
-  wateringIntervalSpringDays: number
-  wateringIntervalSummerDays: number
-  wateringIntervalAutumnDays: number
-  wateringIntervalWinterDays: number
-  lightLevel: number
-  temperatureMin: number
-  temperatureMax: number
-  humidityMin: number
-  humidityMax: number
-  potType: number
-  potSize: number
-  soilType: number
-  lastRepottedAt: number
-  nextRepottingAt: number
-  wateringAmountMl: number
-  wateringNotes: number
-  fertilizingIntervalDays: number
-  lastFertilizedAt: number
-  nextFertilizingAt: number
   createdAt: number
   updatedAt: number
+  photoUrl: number
+  plantName: number
+  fertilizingIntervalDays: number
+  humidityMax: number
+  humidityMin: number
+  lastFertilizedAt: number
+  lastRepottedAt: number
+  lightLevel: number
+  nextFertilizingAt: number
+  nextRepottingAt: number
+  potSize: number
+  potType: number
+  soilType: number
+  temperatureMax: number
+  temperatureMin: number
+  wateringAmountMl: number
+  wateringNotes: number
+  wateringIntervalDays: number
+  wateringIntervalSummerDays: number
+  wateringIntervalWinterDays: number
+  wateringIntervalSpringDays: number
+  wateringIntervalAutumnDays: number
+  location: number
   _all: number
 }
 
 
 export type UserPlantAvgAggregateInputType = {
-  wateringIntervalDays?: true
-  wateringIntervalSpringDays?: true
-  wateringIntervalSummerDays?: true
-  wateringIntervalAutumnDays?: true
-  wateringIntervalWinterDays?: true
-  temperatureMin?: true
-  temperatureMax?: true
-  humidityMin?: true
-  humidityMax?: true
-  wateringAmountMl?: true
   fertilizingIntervalDays?: true
+  humidityMax?: true
+  humidityMin?: true
+  temperatureMax?: true
+  temperatureMin?: true
+  wateringAmountMl?: true
+  wateringIntervalDays?: true
+  wateringIntervalSummerDays?: true
+  wateringIntervalWinterDays?: true
+  wateringIntervalSpringDays?: true
+  wateringIntervalAutumnDays?: true
 }
 
 export type UserPlantSumAggregateInputType = {
-  wateringIntervalDays?: true
-  wateringIntervalSpringDays?: true
-  wateringIntervalSummerDays?: true
-  wateringIntervalAutumnDays?: true
-  wateringIntervalWinterDays?: true
-  temperatureMin?: true
-  temperatureMax?: true
-  humidityMin?: true
-  humidityMax?: true
-  wateringAmountMl?: true
   fertilizingIntervalDays?: true
+  humidityMax?: true
+  humidityMin?: true
+  temperatureMax?: true
+  temperatureMin?: true
+  wateringAmountMl?: true
+  wateringIntervalDays?: true
+  wateringIntervalSummerDays?: true
+  wateringIntervalWinterDays?: true
+  wateringIntervalSpringDays?: true
+  wateringIntervalAutumnDays?: true
 }
 
 export type UserPlantMinAggregateInputType = {
   id?: true
   nickname?: true
-  plantName?: true
-  location?: true
-  photoUrl?: true
   plantTypeId?: true
   userId?: true
   lastWateredAt?: true
   nextWateringAt?: true
-  wateringIntervalDays?: true
-  wateringIntervalSpringDays?: true
-  wateringIntervalSummerDays?: true
-  wateringIntervalAutumnDays?: true
-  wateringIntervalWinterDays?: true
-  lightLevel?: true
-  temperatureMin?: true
-  temperatureMax?: true
-  humidityMin?: true
-  humidityMax?: true
-  potType?: true
-  potSize?: true
-  soilType?: true
-  lastRepottedAt?: true
-  nextRepottingAt?: true
-  wateringAmountMl?: true
-  wateringNotes?: true
-  fertilizingIntervalDays?: true
-  lastFertilizedAt?: true
-  nextFertilizingAt?: true
   createdAt?: true
   updatedAt?: true
+  photoUrl?: true
+  plantName?: true
+  fertilizingIntervalDays?: true
+  humidityMax?: true
+  humidityMin?: true
+  lastFertilizedAt?: true
+  lastRepottedAt?: true
+  lightLevel?: true
+  nextFertilizingAt?: true
+  nextRepottingAt?: true
+  potSize?: true
+  potType?: true
+  soilType?: true
+  temperatureMax?: true
+  temperatureMin?: true
+  wateringAmountMl?: true
+  wateringNotes?: true
+  wateringIntervalDays?: true
+  wateringIntervalSummerDays?: true
+  wateringIntervalWinterDays?: true
+  wateringIntervalSpringDays?: true
+  wateringIntervalAutumnDays?: true
+  location?: true
 }
 
 export type UserPlantMaxAggregateInputType = {
   id?: true
   nickname?: true
-  plantName?: true
-  location?: true
-  photoUrl?: true
   plantTypeId?: true
   userId?: true
   lastWateredAt?: true
   nextWateringAt?: true
-  wateringIntervalDays?: true
-  wateringIntervalSpringDays?: true
-  wateringIntervalSummerDays?: true
-  wateringIntervalAutumnDays?: true
-  wateringIntervalWinterDays?: true
-  lightLevel?: true
-  temperatureMin?: true
-  temperatureMax?: true
-  humidityMin?: true
-  humidityMax?: true
-  potType?: true
-  potSize?: true
-  soilType?: true
-  lastRepottedAt?: true
-  nextRepottingAt?: true
-  wateringAmountMl?: true
-  wateringNotes?: true
-  fertilizingIntervalDays?: true
-  lastFertilizedAt?: true
-  nextFertilizingAt?: true
   createdAt?: true
   updatedAt?: true
+  photoUrl?: true
+  plantName?: true
+  fertilizingIntervalDays?: true
+  humidityMax?: true
+  humidityMin?: true
+  lastFertilizedAt?: true
+  lastRepottedAt?: true
+  lightLevel?: true
+  nextFertilizingAt?: true
+  nextRepottingAt?: true
+  potSize?: true
+  potType?: true
+  soilType?: true
+  temperatureMax?: true
+  temperatureMin?: true
+  wateringAmountMl?: true
+  wateringNotes?: true
+  wateringIntervalDays?: true
+  wateringIntervalSummerDays?: true
+  wateringIntervalWinterDays?: true
+  wateringIntervalSpringDays?: true
+  wateringIntervalAutumnDays?: true
+  location?: true
 }
 
 export type UserPlantCountAggregateInputType = {
   id?: true
   nickname?: true
-  plantName?: true
-  location?: true
-  photoUrl?: true
   plantTypeId?: true
   userId?: true
   lastWateredAt?: true
   nextWateringAt?: true
-  wateringIntervalDays?: true
-  wateringIntervalSpringDays?: true
-  wateringIntervalSummerDays?: true
-  wateringIntervalAutumnDays?: true
-  wateringIntervalWinterDays?: true
-  lightLevel?: true
-  temperatureMin?: true
-  temperatureMax?: true
-  humidityMin?: true
-  humidityMax?: true
-  potType?: true
-  potSize?: true
-  soilType?: true
-  lastRepottedAt?: true
-  nextRepottingAt?: true
-  wateringAmountMl?: true
-  wateringNotes?: true
-  fertilizingIntervalDays?: true
-  lastFertilizedAt?: true
-  nextFertilizingAt?: true
   createdAt?: true
   updatedAt?: true
+  photoUrl?: true
+  plantName?: true
+  fertilizingIntervalDays?: true
+  humidityMax?: true
+  humidityMin?: true
+  lastFertilizedAt?: true
+  lastRepottedAt?: true
+  lightLevel?: true
+  nextFertilizingAt?: true
+  nextRepottingAt?: true
+  potSize?: true
+  potType?: true
+  soilType?: true
+  temperatureMax?: true
+  temperatureMin?: true
+  wateringAmountMl?: true
+  wateringNotes?: true
+  wateringIntervalDays?: true
+  wateringIntervalSummerDays?: true
+  wateringIntervalWinterDays?: true
+  wateringIntervalSpringDays?: true
+  wateringIntervalAutumnDays?: true
+  location?: true
   _all?: true
 }
 
@@ -378,35 +378,35 @@ export type UserPlantGroupByArgs<ExtArgs extends runtime.Types.Extensions.Intern
 export type UserPlantGroupByOutputType = {
   id: string
   nickname: string | null
-  plantName: string | null
-  location: string | null
-  photoUrl: string | null
   plantTypeId: string | null
   userId: string
   lastWateredAt: Date | null
   nextWateringAt: Date | null
-  wateringIntervalDays: number | null
-  wateringIntervalSpringDays: number | null
-  wateringIntervalSummerDays: number | null
-  wateringIntervalAutumnDays: number | null
-  wateringIntervalWinterDays: number | null
-  lightLevel: string | null
-  temperatureMin: number | null
-  temperatureMax: number | null
-  humidityMin: number | null
-  humidityMax: number | null
-  potType: string | null
-  potSize: string | null
-  soilType: string | null
-  lastRepottedAt: Date | null
-  nextRepottingAt: Date | null
-  wateringAmountMl: number | null
-  wateringNotes: string | null
-  fertilizingIntervalDays: number | null
-  lastFertilizedAt: Date | null
-  nextFertilizingAt: Date | null
   createdAt: Date
   updatedAt: Date
+  photoUrl: string | null
+  plantName: string | null
+  fertilizingIntervalDays: number | null
+  humidityMax: number | null
+  humidityMin: number | null
+  lastFertilizedAt: Date | null
+  lastRepottedAt: Date | null
+  lightLevel: string | null
+  nextFertilizingAt: Date | null
+  nextRepottingAt: Date | null
+  potSize: string | null
+  potType: string | null
+  soilType: string | null
+  temperatureMax: number | null
+  temperatureMin: number | null
+  wateringAmountMl: number | null
+  wateringNotes: string | null
+  wateringIntervalDays: number | null
+  wateringIntervalSummerDays: number | null
+  wateringIntervalWinterDays: number | null
+  wateringIntervalSpringDays: number | null
+  wateringIntervalAutumnDays: number | null
+  location: string | null
   _count: UserPlantCountAggregateOutputType | null
   _avg: UserPlantAvgAggregateOutputType | null
   _sum: UserPlantSumAggregateOutputType | null
@@ -435,81 +435,81 @@ export type UserPlantWhereInput = {
   NOT?: Prisma.UserPlantWhereInput | Prisma.UserPlantWhereInput[]
   id?: Prisma.StringFilter<"UserPlant"> | string
   nickname?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  plantName?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  location?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  photoUrl?: Prisma.StringNullableFilter<"UserPlant"> | string | null
   plantTypeId?: Prisma.StringNullableFilter<"UserPlant"> | string | null
   userId?: Prisma.StringFilter<"UserPlant"> | string
   lastWateredAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
   nextWateringAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  wateringIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalSpringDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalSummerDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalAutumnDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalWinterDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  lightLevel?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  temperatureMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  temperatureMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  humidityMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  humidityMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  potType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  potSize?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  soilType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  lastRepottedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  nextRepottingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  wateringAmountMl?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringNotes?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  fertilizingIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  lastFertilizedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  nextFertilizingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"UserPlant"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"UserPlant"> | Date | string
+  photoUrl?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  plantName?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  fertilizingIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  humidityMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  humidityMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  lastFertilizedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  lastRepottedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  lightLevel?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  nextFertilizingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  nextRepottingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  potSize?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  potType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  soilType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  temperatureMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  temperatureMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringAmountMl?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringNotes?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  wateringIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalSummerDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalWinterDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalSpringDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalAutumnDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  location?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  careEvents?: Prisma.PlantCareEventListRelationFilter
+  plantDiagnosis?: Prisma.PlantDiagnosisListRelationFilter
+  reminders?: Prisma.ReminderListRelationFilter
   plantType?: Prisma.XOR<Prisma.PlantTypeNullableScalarRelationFilter, Prisma.PlantTypeWhereInput> | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   wateringLogs?: Prisma.WateringLogListRelationFilter
-  careEvents?: Prisma.PlantCareEventListRelationFilter
-  reminders?: Prisma.ReminderListRelationFilter
-  plantDiagnosis?: Prisma.PlantDiagnosisListRelationFilter
 }
 
 export type UserPlantOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nickname?: Prisma.SortOrderInput | Prisma.SortOrder
-  plantName?: Prisma.SortOrderInput | Prisma.SortOrder
-  location?: Prisma.SortOrderInput | Prisma.SortOrder
-  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   plantTypeId?: Prisma.SortOrderInput | Prisma.SortOrder
   userId?: Prisma.SortOrder
   lastWateredAt?: Prisma.SortOrderInput | Prisma.SortOrder
   nextWateringAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalSpringDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalSummerDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalAutumnDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalWinterDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  lightLevel?: Prisma.SortOrderInput | Prisma.SortOrder
-  temperatureMin?: Prisma.SortOrderInput | Prisma.SortOrder
-  temperatureMax?: Prisma.SortOrderInput | Prisma.SortOrder
-  humidityMin?: Prisma.SortOrderInput | Prisma.SortOrder
-  humidityMax?: Prisma.SortOrderInput | Prisma.SortOrder
-  potType?: Prisma.SortOrderInput | Prisma.SortOrder
-  potSize?: Prisma.SortOrderInput | Prisma.SortOrder
-  soilType?: Prisma.SortOrderInput | Prisma.SortOrder
-  lastRepottedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  nextRepottingAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringAmountMl?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringNotes?: Prisma.SortOrderInput | Prisma.SortOrder
-  fertilizingIntervalDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  lastFertilizedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  nextFertilizingAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  plantName?: Prisma.SortOrderInput | Prisma.SortOrder
+  fertilizingIntervalDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  humidityMax?: Prisma.SortOrderInput | Prisma.SortOrder
+  humidityMin?: Prisma.SortOrderInput | Prisma.SortOrder
+  lastFertilizedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  lastRepottedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  lightLevel?: Prisma.SortOrderInput | Prisma.SortOrder
+  nextFertilizingAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  nextRepottingAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  potSize?: Prisma.SortOrderInput | Prisma.SortOrder
+  potType?: Prisma.SortOrderInput | Prisma.SortOrder
+  soilType?: Prisma.SortOrderInput | Prisma.SortOrder
+  temperatureMax?: Prisma.SortOrderInput | Prisma.SortOrder
+  temperatureMin?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringAmountMl?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringNotes?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalSummerDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalWinterDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalSpringDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalAutumnDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  location?: Prisma.SortOrderInput | Prisma.SortOrder
+  careEvents?: Prisma.PlantCareEventOrderByRelationAggregateInput
+  plantDiagnosis?: Prisma.PlantDiagnosisOrderByRelationAggregateInput
+  reminders?: Prisma.ReminderOrderByRelationAggregateInput
   plantType?: Prisma.PlantTypeOrderByWithRelationInput
   user?: Prisma.UserOrderByWithRelationInput
   wateringLogs?: Prisma.WateringLogOrderByRelationAggregateInput
-  careEvents?: Prisma.PlantCareEventOrderByRelationAggregateInput
-  reminders?: Prisma.ReminderOrderByRelationAggregateInput
-  plantDiagnosis?: Prisma.PlantDiagnosisOrderByRelationAggregateInput
 }
 
 export type UserPlantWhereUniqueInput = Prisma.AtLeast<{
@@ -518,75 +518,75 @@ export type UserPlantWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.UserPlantWhereInput[]
   NOT?: Prisma.UserPlantWhereInput | Prisma.UserPlantWhereInput[]
   nickname?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  plantName?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  location?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  photoUrl?: Prisma.StringNullableFilter<"UserPlant"> | string | null
   plantTypeId?: Prisma.StringNullableFilter<"UserPlant"> | string | null
   userId?: Prisma.StringFilter<"UserPlant"> | string
   lastWateredAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
   nextWateringAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  wateringIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalSpringDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalSummerDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalAutumnDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalWinterDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  lightLevel?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  temperatureMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  temperatureMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  humidityMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  humidityMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  potType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  potSize?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  soilType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  lastRepottedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  nextRepottingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  wateringAmountMl?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringNotes?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  fertilizingIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  lastFertilizedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  nextFertilizingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"UserPlant"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"UserPlant"> | Date | string
+  photoUrl?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  plantName?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  fertilizingIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  humidityMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  humidityMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  lastFertilizedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  lastRepottedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  lightLevel?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  nextFertilizingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  nextRepottingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  potSize?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  potType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  soilType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  temperatureMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  temperatureMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringAmountMl?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringNotes?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  wateringIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalSummerDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalWinterDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalSpringDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalAutumnDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  location?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  careEvents?: Prisma.PlantCareEventListRelationFilter
+  plantDiagnosis?: Prisma.PlantDiagnosisListRelationFilter
+  reminders?: Prisma.ReminderListRelationFilter
   plantType?: Prisma.XOR<Prisma.PlantTypeNullableScalarRelationFilter, Prisma.PlantTypeWhereInput> | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   wateringLogs?: Prisma.WateringLogListRelationFilter
-  careEvents?: Prisma.PlantCareEventListRelationFilter
-  reminders?: Prisma.ReminderListRelationFilter
-  plantDiagnosis?: Prisma.PlantDiagnosisListRelationFilter
 }, "id">
 
 export type UserPlantOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nickname?: Prisma.SortOrderInput | Prisma.SortOrder
-  plantName?: Prisma.SortOrderInput | Prisma.SortOrder
-  location?: Prisma.SortOrderInput | Prisma.SortOrder
-  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   plantTypeId?: Prisma.SortOrderInput | Prisma.SortOrder
   userId?: Prisma.SortOrder
   lastWateredAt?: Prisma.SortOrderInput | Prisma.SortOrder
   nextWateringAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalSpringDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalSummerDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalAutumnDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringIntervalWinterDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  lightLevel?: Prisma.SortOrderInput | Prisma.SortOrder
-  temperatureMin?: Prisma.SortOrderInput | Prisma.SortOrder
-  temperatureMax?: Prisma.SortOrderInput | Prisma.SortOrder
-  humidityMin?: Prisma.SortOrderInput | Prisma.SortOrder
-  humidityMax?: Prisma.SortOrderInput | Prisma.SortOrder
-  potType?: Prisma.SortOrderInput | Prisma.SortOrder
-  potSize?: Prisma.SortOrderInput | Prisma.SortOrder
-  soilType?: Prisma.SortOrderInput | Prisma.SortOrder
-  lastRepottedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  nextRepottingAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringAmountMl?: Prisma.SortOrderInput | Prisma.SortOrder
-  wateringNotes?: Prisma.SortOrderInput | Prisma.SortOrder
-  fertilizingIntervalDays?: Prisma.SortOrderInput | Prisma.SortOrder
-  lastFertilizedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  nextFertilizingAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  plantName?: Prisma.SortOrderInput | Prisma.SortOrder
+  fertilizingIntervalDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  humidityMax?: Prisma.SortOrderInput | Prisma.SortOrder
+  humidityMin?: Prisma.SortOrderInput | Prisma.SortOrder
+  lastFertilizedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  lastRepottedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  lightLevel?: Prisma.SortOrderInput | Prisma.SortOrder
+  nextFertilizingAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  nextRepottingAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  potSize?: Prisma.SortOrderInput | Prisma.SortOrder
+  potType?: Prisma.SortOrderInput | Prisma.SortOrder
+  soilType?: Prisma.SortOrderInput | Prisma.SortOrder
+  temperatureMax?: Prisma.SortOrderInput | Prisma.SortOrder
+  temperatureMin?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringAmountMl?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringNotes?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalSummerDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalWinterDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalSpringDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  wateringIntervalAutumnDays?: Prisma.SortOrderInput | Prisma.SortOrder
+  location?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.UserPlantCountOrderByAggregateInput
   _avg?: Prisma.UserPlantAvgOrderByAggregateInput
   _max?: Prisma.UserPlantMaxOrderByAggregateInput
@@ -600,287 +600,287 @@ export type UserPlantScalarWhereWithAggregatesInput = {
   NOT?: Prisma.UserPlantScalarWhereWithAggregatesInput | Prisma.UserPlantScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"UserPlant"> | string
   nickname?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
-  plantName?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
-  location?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
-  photoUrl?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
   plantTypeId?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
   userId?: Prisma.StringWithAggregatesFilter<"UserPlant"> | string
   lastWateredAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
   nextWateringAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
-  wateringIntervalDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  wateringIntervalSpringDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  wateringIntervalSummerDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  wateringIntervalAutumnDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  wateringIntervalWinterDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  lightLevel?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
-  temperatureMin?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  temperatureMax?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  humidityMin?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  humidityMax?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  potType?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
-  potSize?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
-  soilType?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
-  lastRepottedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
-  nextRepottingAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
-  wateringAmountMl?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  wateringNotes?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
-  fertilizingIntervalDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
-  lastFertilizedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
-  nextFertilizingAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"UserPlant"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"UserPlant"> | Date | string
+  photoUrl?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
+  plantName?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
+  fertilizingIntervalDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  humidityMax?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  humidityMin?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  lastFertilizedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
+  lastRepottedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
+  lightLevel?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
+  nextFertilizingAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
+  nextRepottingAt?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPlant"> | Date | string | null
+  potSize?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
+  potType?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
+  soilType?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
+  temperatureMax?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  temperatureMin?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  wateringAmountMl?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  wateringNotes?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
+  wateringIntervalDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  wateringIntervalSummerDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  wateringIntervalWinterDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  wateringIntervalSpringDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  wateringIntervalAutumnDays?: Prisma.IntNullableWithAggregatesFilter<"UserPlant"> | number | null
+  location?: Prisma.StringNullableWithAggregatesFilter<"UserPlant"> | string | null
 }
 
 export type UserPlantCreateInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
+  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
-  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
-  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantUncheckedCreateInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   plantTypeId?: string | null
   userId: string
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
   careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
+  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
+  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
-  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
-  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
+  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantCreateManyInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   plantTypeId?: string | null
   userId: string
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
 }
 
 export type UserPlantUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserPlantUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserPlantListRelationFilter = {
@@ -896,131 +896,131 @@ export type UserPlantOrderByRelationAggregateInput = {
 export type UserPlantCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nickname?: Prisma.SortOrder
-  plantName?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  photoUrl?: Prisma.SortOrder
   plantTypeId?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   lastWateredAt?: Prisma.SortOrder
   nextWateringAt?: Prisma.SortOrder
-  wateringIntervalDays?: Prisma.SortOrder
-  wateringIntervalSpringDays?: Prisma.SortOrder
-  wateringIntervalSummerDays?: Prisma.SortOrder
-  wateringIntervalAutumnDays?: Prisma.SortOrder
-  wateringIntervalWinterDays?: Prisma.SortOrder
-  lightLevel?: Prisma.SortOrder
-  temperatureMin?: Prisma.SortOrder
-  temperatureMax?: Prisma.SortOrder
-  humidityMin?: Prisma.SortOrder
-  humidityMax?: Prisma.SortOrder
-  potType?: Prisma.SortOrder
-  potSize?: Prisma.SortOrder
-  soilType?: Prisma.SortOrder
-  lastRepottedAt?: Prisma.SortOrder
-  nextRepottingAt?: Prisma.SortOrder
-  wateringAmountMl?: Prisma.SortOrder
-  wateringNotes?: Prisma.SortOrder
-  fertilizingIntervalDays?: Prisma.SortOrder
-  lastFertilizedAt?: Prisma.SortOrder
-  nextFertilizingAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
+  plantName?: Prisma.SortOrder
+  fertilizingIntervalDays?: Prisma.SortOrder
+  humidityMax?: Prisma.SortOrder
+  humidityMin?: Prisma.SortOrder
+  lastFertilizedAt?: Prisma.SortOrder
+  lastRepottedAt?: Prisma.SortOrder
+  lightLevel?: Prisma.SortOrder
+  nextFertilizingAt?: Prisma.SortOrder
+  nextRepottingAt?: Prisma.SortOrder
+  potSize?: Prisma.SortOrder
+  potType?: Prisma.SortOrder
+  soilType?: Prisma.SortOrder
+  temperatureMax?: Prisma.SortOrder
+  temperatureMin?: Prisma.SortOrder
+  wateringAmountMl?: Prisma.SortOrder
+  wateringNotes?: Prisma.SortOrder
+  wateringIntervalDays?: Prisma.SortOrder
+  wateringIntervalSummerDays?: Prisma.SortOrder
+  wateringIntervalWinterDays?: Prisma.SortOrder
+  wateringIntervalSpringDays?: Prisma.SortOrder
+  wateringIntervalAutumnDays?: Prisma.SortOrder
+  location?: Prisma.SortOrder
 }
 
 export type UserPlantAvgOrderByAggregateInput = {
-  wateringIntervalDays?: Prisma.SortOrder
-  wateringIntervalSpringDays?: Prisma.SortOrder
-  wateringIntervalSummerDays?: Prisma.SortOrder
-  wateringIntervalAutumnDays?: Prisma.SortOrder
-  wateringIntervalWinterDays?: Prisma.SortOrder
-  temperatureMin?: Prisma.SortOrder
-  temperatureMax?: Prisma.SortOrder
-  humidityMin?: Prisma.SortOrder
-  humidityMax?: Prisma.SortOrder
-  wateringAmountMl?: Prisma.SortOrder
   fertilizingIntervalDays?: Prisma.SortOrder
+  humidityMax?: Prisma.SortOrder
+  humidityMin?: Prisma.SortOrder
+  temperatureMax?: Prisma.SortOrder
+  temperatureMin?: Prisma.SortOrder
+  wateringAmountMl?: Prisma.SortOrder
+  wateringIntervalDays?: Prisma.SortOrder
+  wateringIntervalSummerDays?: Prisma.SortOrder
+  wateringIntervalWinterDays?: Prisma.SortOrder
+  wateringIntervalSpringDays?: Prisma.SortOrder
+  wateringIntervalAutumnDays?: Prisma.SortOrder
 }
 
 export type UserPlantMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nickname?: Prisma.SortOrder
-  plantName?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  photoUrl?: Prisma.SortOrder
   plantTypeId?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   lastWateredAt?: Prisma.SortOrder
   nextWateringAt?: Prisma.SortOrder
-  wateringIntervalDays?: Prisma.SortOrder
-  wateringIntervalSpringDays?: Prisma.SortOrder
-  wateringIntervalSummerDays?: Prisma.SortOrder
-  wateringIntervalAutumnDays?: Prisma.SortOrder
-  wateringIntervalWinterDays?: Prisma.SortOrder
-  lightLevel?: Prisma.SortOrder
-  temperatureMin?: Prisma.SortOrder
-  temperatureMax?: Prisma.SortOrder
-  humidityMin?: Prisma.SortOrder
-  humidityMax?: Prisma.SortOrder
-  potType?: Prisma.SortOrder
-  potSize?: Prisma.SortOrder
-  soilType?: Prisma.SortOrder
-  lastRepottedAt?: Prisma.SortOrder
-  nextRepottingAt?: Prisma.SortOrder
-  wateringAmountMl?: Prisma.SortOrder
-  wateringNotes?: Prisma.SortOrder
-  fertilizingIntervalDays?: Prisma.SortOrder
-  lastFertilizedAt?: Prisma.SortOrder
-  nextFertilizingAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
+  plantName?: Prisma.SortOrder
+  fertilizingIntervalDays?: Prisma.SortOrder
+  humidityMax?: Prisma.SortOrder
+  humidityMin?: Prisma.SortOrder
+  lastFertilizedAt?: Prisma.SortOrder
+  lastRepottedAt?: Prisma.SortOrder
+  lightLevel?: Prisma.SortOrder
+  nextFertilizingAt?: Prisma.SortOrder
+  nextRepottingAt?: Prisma.SortOrder
+  potSize?: Prisma.SortOrder
+  potType?: Prisma.SortOrder
+  soilType?: Prisma.SortOrder
+  temperatureMax?: Prisma.SortOrder
+  temperatureMin?: Prisma.SortOrder
+  wateringAmountMl?: Prisma.SortOrder
+  wateringNotes?: Prisma.SortOrder
+  wateringIntervalDays?: Prisma.SortOrder
+  wateringIntervalSummerDays?: Prisma.SortOrder
+  wateringIntervalWinterDays?: Prisma.SortOrder
+  wateringIntervalSpringDays?: Prisma.SortOrder
+  wateringIntervalAutumnDays?: Prisma.SortOrder
+  location?: Prisma.SortOrder
 }
 
 export type UserPlantMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nickname?: Prisma.SortOrder
-  plantName?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  photoUrl?: Prisma.SortOrder
   plantTypeId?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   lastWateredAt?: Prisma.SortOrder
   nextWateringAt?: Prisma.SortOrder
-  wateringIntervalDays?: Prisma.SortOrder
-  wateringIntervalSpringDays?: Prisma.SortOrder
-  wateringIntervalSummerDays?: Prisma.SortOrder
-  wateringIntervalAutumnDays?: Prisma.SortOrder
-  wateringIntervalWinterDays?: Prisma.SortOrder
-  lightLevel?: Prisma.SortOrder
-  temperatureMin?: Prisma.SortOrder
-  temperatureMax?: Prisma.SortOrder
-  humidityMin?: Prisma.SortOrder
-  humidityMax?: Prisma.SortOrder
-  potType?: Prisma.SortOrder
-  potSize?: Prisma.SortOrder
-  soilType?: Prisma.SortOrder
-  lastRepottedAt?: Prisma.SortOrder
-  nextRepottingAt?: Prisma.SortOrder
-  wateringAmountMl?: Prisma.SortOrder
-  wateringNotes?: Prisma.SortOrder
-  fertilizingIntervalDays?: Prisma.SortOrder
-  lastFertilizedAt?: Prisma.SortOrder
-  nextFertilizingAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  photoUrl?: Prisma.SortOrder
+  plantName?: Prisma.SortOrder
+  fertilizingIntervalDays?: Prisma.SortOrder
+  humidityMax?: Prisma.SortOrder
+  humidityMin?: Prisma.SortOrder
+  lastFertilizedAt?: Prisma.SortOrder
+  lastRepottedAt?: Prisma.SortOrder
+  lightLevel?: Prisma.SortOrder
+  nextFertilizingAt?: Prisma.SortOrder
+  nextRepottingAt?: Prisma.SortOrder
+  potSize?: Prisma.SortOrder
+  potType?: Prisma.SortOrder
+  soilType?: Prisma.SortOrder
+  temperatureMax?: Prisma.SortOrder
+  temperatureMin?: Prisma.SortOrder
+  wateringAmountMl?: Prisma.SortOrder
+  wateringNotes?: Prisma.SortOrder
+  wateringIntervalDays?: Prisma.SortOrder
+  wateringIntervalSummerDays?: Prisma.SortOrder
+  wateringIntervalWinterDays?: Prisma.SortOrder
+  wateringIntervalSpringDays?: Prisma.SortOrder
+  wateringIntervalAutumnDays?: Prisma.SortOrder
+  location?: Prisma.SortOrder
 }
 
 export type UserPlantSumOrderByAggregateInput = {
-  wateringIntervalDays?: Prisma.SortOrder
-  wateringIntervalSpringDays?: Prisma.SortOrder
-  wateringIntervalSummerDays?: Prisma.SortOrder
-  wateringIntervalAutumnDays?: Prisma.SortOrder
-  wateringIntervalWinterDays?: Prisma.SortOrder
-  temperatureMin?: Prisma.SortOrder
-  temperatureMax?: Prisma.SortOrder
-  humidityMin?: Prisma.SortOrder
-  humidityMax?: Prisma.SortOrder
-  wateringAmountMl?: Prisma.SortOrder
   fertilizingIntervalDays?: Prisma.SortOrder
+  humidityMax?: Prisma.SortOrder
+  humidityMin?: Prisma.SortOrder
+  temperatureMax?: Prisma.SortOrder
+  temperatureMin?: Prisma.SortOrder
+  wateringAmountMl?: Prisma.SortOrder
+  wateringIntervalDays?: Prisma.SortOrder
+  wateringIntervalSummerDays?: Prisma.SortOrder
+  wateringIntervalWinterDays?: Prisma.SortOrder
+  wateringIntervalSpringDays?: Prisma.SortOrder
+  wateringIntervalAutumnDays?: Prisma.SortOrder
 }
 
 export type UserPlantScalarRelationFilter = {
@@ -1175,75 +1175,75 @@ export type UserPlantUpdateOneRequiredWithoutPlantDiagnosisNestedInput = {
 export type UserPlantCreateWithoutUserInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
+  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
-  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
-  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantUncheckedCreateWithoutUserInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   plantTypeId?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
   careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
+  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantCreateOrConnectWithoutUserInput = {
@@ -1278,109 +1278,109 @@ export type UserPlantScalarWhereInput = {
   NOT?: Prisma.UserPlantScalarWhereInput | Prisma.UserPlantScalarWhereInput[]
   id?: Prisma.StringFilter<"UserPlant"> | string
   nickname?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  plantName?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  location?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  photoUrl?: Prisma.StringNullableFilter<"UserPlant"> | string | null
   plantTypeId?: Prisma.StringNullableFilter<"UserPlant"> | string | null
   userId?: Prisma.StringFilter<"UserPlant"> | string
   lastWateredAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
   nextWateringAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  wateringIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalSpringDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalSummerDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalAutumnDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringIntervalWinterDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  lightLevel?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  temperatureMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  temperatureMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  humidityMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  humidityMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  potType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  potSize?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  soilType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  lastRepottedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  nextRepottingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  wateringAmountMl?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  wateringNotes?: Prisma.StringNullableFilter<"UserPlant"> | string | null
-  fertilizingIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
-  lastFertilizedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
-  nextFertilizingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"UserPlant"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"UserPlant"> | Date | string
+  photoUrl?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  plantName?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  fertilizingIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  humidityMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  humidityMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  lastFertilizedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  lastRepottedAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  lightLevel?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  nextFertilizingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  nextRepottingAt?: Prisma.DateTimeNullableFilter<"UserPlant"> | Date | string | null
+  potSize?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  potType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  soilType?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  temperatureMax?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  temperatureMin?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringAmountMl?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringNotes?: Prisma.StringNullableFilter<"UserPlant"> | string | null
+  wateringIntervalDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalSummerDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalWinterDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalSpringDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  wateringIntervalAutumnDays?: Prisma.IntNullableFilter<"UserPlant"> | number | null
+  location?: Prisma.StringNullableFilter<"UserPlant"> | string | null
 }
 
 export type UserPlantCreateWithoutPlantTypeInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
+  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
-  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
-  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantUncheckedCreateWithoutPlantTypeInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   userId: string
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
   careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
+  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantCreateOrConnectWithoutPlantTypeInput = {
@@ -1412,75 +1412,75 @@ export type UserPlantUpdateManyWithWhereWithoutPlantTypeInput = {
 export type UserPlantCreateWithoutWateringLogsInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
+  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
-  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
-  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantUncheckedCreateWithoutWateringLogsInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   plantTypeId?: string | null
   userId: string
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
   careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantCreateOrConnectWithoutWateringLogsInput = {
@@ -1502,149 +1502,149 @@ export type UserPlantUpdateToOneWithWhereWithoutWateringLogsInput = {
 export type UserPlantUpdateWithoutWateringLogsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
+  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
-  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
-  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateWithoutWateringLogsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantCreateWithoutCareEventsInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
+  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
-  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantUncheckedCreateWithoutCareEventsInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   plantTypeId?: string | null
   userId: string
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
+  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantCreateOrConnectWithoutCareEventsInput = {
@@ -1666,149 +1666,149 @@ export type UserPlantUpdateToOneWithWhereWithoutCareEventsInput = {
 export type UserPlantUpdateWithoutCareEventsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
-  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateWithoutCareEventsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
+  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantCreateWithoutRemindersInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
+  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
-  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
-  plantDiagnosis?: Prisma.PlantDiagnosisCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantUncheckedCreateWithoutRemindersInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   plantTypeId?: string | null
   userId: string
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
   careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedCreateNestedManyWithoutPlantInput
+  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantCreateOrConnectWithoutRemindersInput = {
@@ -1830,149 +1830,149 @@ export type UserPlantUpdateToOneWithWhereWithoutRemindersInput = {
 export type UserPlantUpdateWithoutRemindersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
+  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
-  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
-  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateWithoutRemindersInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
+  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantCreateWithoutPlantDiagnosisInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
+  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
+  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
   plantType?: Prisma.PlantTypeCreateNestedOneWithoutUserPlantInput
   user: Prisma.UserCreateNestedOneWithoutPlantsInput
   wateringLogs?: Prisma.WateringLogCreateNestedManyWithoutPlantInput
-  careEvents?: Prisma.PlantCareEventCreateNestedManyWithoutPlantInput
-  reminders?: Prisma.ReminderCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantUncheckedCreateWithoutPlantDiagnosisInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   plantTypeId?: string | null
   userId: string
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
   careEvents?: Prisma.PlantCareEventUncheckedCreateNestedManyWithoutPlantInput
   reminders?: Prisma.ReminderUncheckedCreateNestedManyWithoutPlantInput
+  wateringLogs?: Prisma.WateringLogUncheckedCreateNestedManyWithoutPlantInput
 }
 
 export type UserPlantCreateOrConnectWithoutPlantDiagnosisInput = {
@@ -1994,355 +1994,355 @@ export type UserPlantUpdateToOneWithWhereWithoutPlantDiagnosisInput = {
 export type UserPlantUpdateWithoutPlantDiagnosisInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
-  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateWithoutPlantDiagnosisInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
   reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
+  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantCreateManyUserInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   plantTypeId?: string | null
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
 }
 
 export type UserPlantUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
+  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   plantType?: Prisma.PlantTypeUpdateOneWithoutUserPlantNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
-  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
-  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
+  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   plantTypeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserPlantCreateManyPlantTypeInput = {
   id?: string
   nickname?: string | null
-  plantName?: string | null
-  location?: string | null
-  photoUrl?: string | null
   userId: string
   lastWateredAt?: Date | string | null
   nextWateringAt?: Date | string | null
-  wateringIntervalDays?: number | null
-  wateringIntervalSpringDays?: number | null
-  wateringIntervalSummerDays?: number | null
-  wateringIntervalAutumnDays?: number | null
-  wateringIntervalWinterDays?: number | null
-  lightLevel?: string | null
-  temperatureMin?: number | null
-  temperatureMax?: number | null
-  humidityMin?: number | null
-  humidityMax?: number | null
-  potType?: string | null
-  potSize?: string | null
-  soilType?: string | null
-  lastRepottedAt?: Date | string | null
-  nextRepottingAt?: Date | string | null
-  wateringAmountMl?: number | null
-  wateringNotes?: string | null
-  fertilizingIntervalDays?: number | null
-  lastFertilizedAt?: Date | string | null
-  nextFertilizingAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  photoUrl?: string | null
+  plantName?: string | null
+  fertilizingIntervalDays?: number | null
+  humidityMax?: number | null
+  humidityMin?: number | null
+  lastFertilizedAt?: Date | string | null
+  lastRepottedAt?: Date | string | null
+  lightLevel?: string | null
+  nextFertilizingAt?: Date | string | null
+  nextRepottingAt?: Date | string | null
+  potSize?: string | null
+  potType?: string | null
+  soilType?: string | null
+  temperatureMax?: number | null
+  temperatureMin?: number | null
+  wateringAmountMl?: number | null
+  wateringNotes?: string | null
+  wateringIntervalDays?: number | null
+  wateringIntervalSummerDays?: number | null
+  wateringIntervalWinterDays?: number | null
+  wateringIntervalSpringDays?: number | null
+  wateringIntervalAutumnDays?: number | null
+  location?: string | null
 }
 
 export type UserPlantUpdateWithoutPlantTypeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
+  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutPlantsNestedInput
   wateringLogs?: Prisma.WateringLogUpdateManyWithoutPlantNestedInput
-  careEvents?: Prisma.PlantCareEventUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUpdateManyWithoutPlantNestedInput
-  plantDiagnosis?: Prisma.PlantDiagnosisUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateWithoutPlantTypeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   careEvents?: Prisma.PlantCareEventUncheckedUpdateManyWithoutPlantNestedInput
-  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
   plantDiagnosis?: Prisma.PlantDiagnosisUncheckedUpdateManyWithoutPlantNestedInput
+  reminders?: Prisma.ReminderUncheckedUpdateManyWithoutPlantNestedInput
+  wateringLogs?: Prisma.WateringLogUncheckedUpdateManyWithoutPlantNestedInput
 }
 
 export type UserPlantUncheckedUpdateManyWithoutPlantTypeInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   nickname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   lastWateredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextWateringAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plantName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  fertilizingIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  humidityMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  lastFertilizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastRepottedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lightLevel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nextFertilizingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  nextRepottingAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  potSize?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  potType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  soilType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  temperatureMax?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  temperatureMin?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringAmountMl?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  wateringIntervalDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSummerDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalWinterDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalSpringDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  wateringIntervalAutumnDays?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -2351,17 +2351,17 @@ export type UserPlantUncheckedUpdateManyWithoutPlantTypeInput = {
  */
 
 export type UserPlantCountOutputType = {
-  wateringLogs: number
   careEvents: number
-  reminders: number
   plantDiagnosis: number
+  reminders: number
+  wateringLogs: number
 }
 
 export type UserPlantCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  wateringLogs?: boolean | UserPlantCountOutputTypeCountWateringLogsArgs
   careEvents?: boolean | UserPlantCountOutputTypeCountCareEventsArgs
-  reminders?: boolean | UserPlantCountOutputTypeCountRemindersArgs
   plantDiagnosis?: boolean | UserPlantCountOutputTypeCountPlantDiagnosisArgs
+  reminders?: boolean | UserPlantCountOutputTypeCountRemindersArgs
+  wateringLogs?: boolean | UserPlantCountOutputTypeCountWateringLogsArgs
 }
 
 /**
@@ -2377,15 +2377,15 @@ export type UserPlantCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ex
 /**
  * UserPlantCountOutputType without action
  */
-export type UserPlantCountOutputTypeCountWateringLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.WateringLogWhereInput
+export type UserPlantCountOutputTypeCountCareEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PlantCareEventWhereInput
 }
 
 /**
  * UserPlantCountOutputType without action
  */
-export type UserPlantCountOutputTypeCountCareEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PlantCareEventWhereInput
+export type UserPlantCountOutputTypeCountPlantDiagnosisArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PlantDiagnosisWhereInput
 }
 
 /**
@@ -2398,84 +2398,84 @@ export type UserPlantCountOutputTypeCountRemindersArgs<ExtArgs extends runtime.T
 /**
  * UserPlantCountOutputType without action
  */
-export type UserPlantCountOutputTypeCountPlantDiagnosisArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PlantDiagnosisWhereInput
+export type UserPlantCountOutputTypeCountWateringLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WateringLogWhereInput
 }
 
 
 export type UserPlantSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nickname?: boolean
-  plantName?: boolean
-  location?: boolean
-  photoUrl?: boolean
   plantTypeId?: boolean
   userId?: boolean
   lastWateredAt?: boolean
   nextWateringAt?: boolean
-  wateringIntervalDays?: boolean
-  wateringIntervalSpringDays?: boolean
-  wateringIntervalSummerDays?: boolean
-  wateringIntervalAutumnDays?: boolean
-  wateringIntervalWinterDays?: boolean
-  lightLevel?: boolean
-  temperatureMin?: boolean
-  temperatureMax?: boolean
-  humidityMin?: boolean
-  humidityMax?: boolean
-  potType?: boolean
-  potSize?: boolean
-  soilType?: boolean
-  lastRepottedAt?: boolean
-  nextRepottingAt?: boolean
-  wateringAmountMl?: boolean
-  wateringNotes?: boolean
-  fertilizingIntervalDays?: boolean
-  lastFertilizedAt?: boolean
-  nextFertilizingAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  photoUrl?: boolean
+  plantName?: boolean
+  fertilizingIntervalDays?: boolean
+  humidityMax?: boolean
+  humidityMin?: boolean
+  lastFertilizedAt?: boolean
+  lastRepottedAt?: boolean
+  lightLevel?: boolean
+  nextFertilizingAt?: boolean
+  nextRepottingAt?: boolean
+  potSize?: boolean
+  potType?: boolean
+  soilType?: boolean
+  temperatureMax?: boolean
+  temperatureMin?: boolean
+  wateringAmountMl?: boolean
+  wateringNotes?: boolean
+  wateringIntervalDays?: boolean
+  wateringIntervalSummerDays?: boolean
+  wateringIntervalWinterDays?: boolean
+  wateringIntervalSpringDays?: boolean
+  wateringIntervalAutumnDays?: boolean
+  location?: boolean
+  careEvents?: boolean | Prisma.UserPlant$careEventsArgs<ExtArgs>
+  plantDiagnosis?: boolean | Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>
+  reminders?: boolean | Prisma.UserPlant$remindersArgs<ExtArgs>
   plantType?: boolean | Prisma.UserPlant$plantTypeArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   wateringLogs?: boolean | Prisma.UserPlant$wateringLogsArgs<ExtArgs>
-  careEvents?: boolean | Prisma.UserPlant$careEventsArgs<ExtArgs>
-  reminders?: boolean | Prisma.UserPlant$remindersArgs<ExtArgs>
-  plantDiagnosis?: boolean | Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>
   _count?: boolean | Prisma.UserPlantCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userPlant"]>
 
 export type UserPlantSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nickname?: boolean
-  plantName?: boolean
-  location?: boolean
-  photoUrl?: boolean
   plantTypeId?: boolean
   userId?: boolean
   lastWateredAt?: boolean
   nextWateringAt?: boolean
-  wateringIntervalDays?: boolean
-  wateringIntervalSpringDays?: boolean
-  wateringIntervalSummerDays?: boolean
-  wateringIntervalAutumnDays?: boolean
-  wateringIntervalWinterDays?: boolean
-  lightLevel?: boolean
-  temperatureMin?: boolean
-  temperatureMax?: boolean
-  humidityMin?: boolean
-  humidityMax?: boolean
-  potType?: boolean
-  potSize?: boolean
-  soilType?: boolean
-  lastRepottedAt?: boolean
-  nextRepottingAt?: boolean
-  wateringAmountMl?: boolean
-  wateringNotes?: boolean
-  fertilizingIntervalDays?: boolean
-  lastFertilizedAt?: boolean
-  nextFertilizingAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  photoUrl?: boolean
+  plantName?: boolean
+  fertilizingIntervalDays?: boolean
+  humidityMax?: boolean
+  humidityMin?: boolean
+  lastFertilizedAt?: boolean
+  lastRepottedAt?: boolean
+  lightLevel?: boolean
+  nextFertilizingAt?: boolean
+  nextRepottingAt?: boolean
+  potSize?: boolean
+  potType?: boolean
+  soilType?: boolean
+  temperatureMax?: boolean
+  temperatureMin?: boolean
+  wateringAmountMl?: boolean
+  wateringNotes?: boolean
+  wateringIntervalDays?: boolean
+  wateringIntervalSummerDays?: boolean
+  wateringIntervalWinterDays?: boolean
+  wateringIntervalSpringDays?: boolean
+  wateringIntervalAutumnDays?: boolean
+  location?: boolean
   plantType?: boolean | Prisma.UserPlant$plantTypeArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userPlant"]>
@@ -2483,35 +2483,35 @@ export type UserPlantSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type UserPlantSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nickname?: boolean
-  plantName?: boolean
-  location?: boolean
-  photoUrl?: boolean
   plantTypeId?: boolean
   userId?: boolean
   lastWateredAt?: boolean
   nextWateringAt?: boolean
-  wateringIntervalDays?: boolean
-  wateringIntervalSpringDays?: boolean
-  wateringIntervalSummerDays?: boolean
-  wateringIntervalAutumnDays?: boolean
-  wateringIntervalWinterDays?: boolean
-  lightLevel?: boolean
-  temperatureMin?: boolean
-  temperatureMax?: boolean
-  humidityMin?: boolean
-  humidityMax?: boolean
-  potType?: boolean
-  potSize?: boolean
-  soilType?: boolean
-  lastRepottedAt?: boolean
-  nextRepottingAt?: boolean
-  wateringAmountMl?: boolean
-  wateringNotes?: boolean
-  fertilizingIntervalDays?: boolean
-  lastFertilizedAt?: boolean
-  nextFertilizingAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  photoUrl?: boolean
+  plantName?: boolean
+  fertilizingIntervalDays?: boolean
+  humidityMax?: boolean
+  humidityMin?: boolean
+  lastFertilizedAt?: boolean
+  lastRepottedAt?: boolean
+  lightLevel?: boolean
+  nextFertilizingAt?: boolean
+  nextRepottingAt?: boolean
+  potSize?: boolean
+  potType?: boolean
+  soilType?: boolean
+  temperatureMax?: boolean
+  temperatureMin?: boolean
+  wateringAmountMl?: boolean
+  wateringNotes?: boolean
+  wateringIntervalDays?: boolean
+  wateringIntervalSummerDays?: boolean
+  wateringIntervalWinterDays?: boolean
+  wateringIntervalSpringDays?: boolean
+  wateringIntervalAutumnDays?: boolean
+  location?: boolean
   plantType?: boolean | Prisma.UserPlant$plantTypeArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["userPlant"]>
@@ -2519,45 +2519,45 @@ export type UserPlantSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type UserPlantSelectScalar = {
   id?: boolean
   nickname?: boolean
-  plantName?: boolean
-  location?: boolean
-  photoUrl?: boolean
   plantTypeId?: boolean
   userId?: boolean
   lastWateredAt?: boolean
   nextWateringAt?: boolean
-  wateringIntervalDays?: boolean
-  wateringIntervalSpringDays?: boolean
-  wateringIntervalSummerDays?: boolean
-  wateringIntervalAutumnDays?: boolean
-  wateringIntervalWinterDays?: boolean
-  lightLevel?: boolean
-  temperatureMin?: boolean
-  temperatureMax?: boolean
-  humidityMin?: boolean
-  humidityMax?: boolean
-  potType?: boolean
-  potSize?: boolean
-  soilType?: boolean
-  lastRepottedAt?: boolean
-  nextRepottingAt?: boolean
-  wateringAmountMl?: boolean
-  wateringNotes?: boolean
-  fertilizingIntervalDays?: boolean
-  lastFertilizedAt?: boolean
-  nextFertilizingAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  photoUrl?: boolean
+  plantName?: boolean
+  fertilizingIntervalDays?: boolean
+  humidityMax?: boolean
+  humidityMin?: boolean
+  lastFertilizedAt?: boolean
+  lastRepottedAt?: boolean
+  lightLevel?: boolean
+  nextFertilizingAt?: boolean
+  nextRepottingAt?: boolean
+  potSize?: boolean
+  potType?: boolean
+  soilType?: boolean
+  temperatureMax?: boolean
+  temperatureMin?: boolean
+  wateringAmountMl?: boolean
+  wateringNotes?: boolean
+  wateringIntervalDays?: boolean
+  wateringIntervalSummerDays?: boolean
+  wateringIntervalWinterDays?: boolean
+  wateringIntervalSpringDays?: boolean
+  wateringIntervalAutumnDays?: boolean
+  location?: boolean
 }
 
-export type UserPlantOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nickname" | "plantName" | "location" | "photoUrl" | "plantTypeId" | "userId" | "lastWateredAt" | "nextWateringAt" | "wateringIntervalDays" | "wateringIntervalSpringDays" | "wateringIntervalSummerDays" | "wateringIntervalAutumnDays" | "wateringIntervalWinterDays" | "lightLevel" | "temperatureMin" | "temperatureMax" | "humidityMin" | "humidityMax" | "potType" | "potSize" | "soilType" | "lastRepottedAt" | "nextRepottingAt" | "wateringAmountMl" | "wateringNotes" | "fertilizingIntervalDays" | "lastFertilizedAt" | "nextFertilizingAt" | "createdAt" | "updatedAt", ExtArgs["result"]["userPlant"]>
+export type UserPlantOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nickname" | "plantTypeId" | "userId" | "lastWateredAt" | "nextWateringAt" | "createdAt" | "updatedAt" | "photoUrl" | "plantName" | "fertilizingIntervalDays" | "humidityMax" | "humidityMin" | "lastFertilizedAt" | "lastRepottedAt" | "lightLevel" | "nextFertilizingAt" | "nextRepottingAt" | "potSize" | "potType" | "soilType" | "temperatureMax" | "temperatureMin" | "wateringAmountMl" | "wateringNotes" | "wateringIntervalDays" | "wateringIntervalSummerDays" | "wateringIntervalWinterDays" | "wateringIntervalSpringDays" | "wateringIntervalAutumnDays" | "location", ExtArgs["result"]["userPlant"]>
 export type UserPlantInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  careEvents?: boolean | Prisma.UserPlant$careEventsArgs<ExtArgs>
+  plantDiagnosis?: boolean | Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>
+  reminders?: boolean | Prisma.UserPlant$remindersArgs<ExtArgs>
   plantType?: boolean | Prisma.UserPlant$plantTypeArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   wateringLogs?: boolean | Prisma.UserPlant$wateringLogsArgs<ExtArgs>
-  careEvents?: boolean | Prisma.UserPlant$careEventsArgs<ExtArgs>
-  reminders?: boolean | Prisma.UserPlant$remindersArgs<ExtArgs>
-  plantDiagnosis?: boolean | Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>
   _count?: boolean | Prisma.UserPlantCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserPlantIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2572,45 +2572,45 @@ export type UserPlantIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
 export type $UserPlantPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "UserPlant"
   objects: {
+    careEvents: Prisma.$PlantCareEventPayload<ExtArgs>[]
+    plantDiagnosis: Prisma.$PlantDiagnosisPayload<ExtArgs>[]
+    reminders: Prisma.$ReminderPayload<ExtArgs>[]
     plantType: Prisma.$PlantTypePayload<ExtArgs> | null
     user: Prisma.$UserPayload<ExtArgs>
     wateringLogs: Prisma.$WateringLogPayload<ExtArgs>[]
-    careEvents: Prisma.$PlantCareEventPayload<ExtArgs>[]
-    reminders: Prisma.$ReminderPayload<ExtArgs>[]
-    plantDiagnosis: Prisma.$PlantDiagnosisPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     nickname: string | null
-    plantName: string | null
-    location: string | null
-    photoUrl: string | null
     plantTypeId: string | null
     userId: string
     lastWateredAt: Date | null
     nextWateringAt: Date | null
-    wateringIntervalDays: number | null
-    wateringIntervalSpringDays: number | null
-    wateringIntervalSummerDays: number | null
-    wateringIntervalAutumnDays: number | null
-    wateringIntervalWinterDays: number | null
-    lightLevel: string | null
-    temperatureMin: number | null
-    temperatureMax: number | null
-    humidityMin: number | null
-    humidityMax: number | null
-    potType: string | null
-    potSize: string | null
-    soilType: string | null
-    lastRepottedAt: Date | null
-    nextRepottingAt: Date | null
-    wateringAmountMl: number | null
-    wateringNotes: string | null
-    fertilizingIntervalDays: number | null
-    lastFertilizedAt: Date | null
-    nextFertilizingAt: Date | null
     createdAt: Date
     updatedAt: Date
+    photoUrl: string | null
+    plantName: string | null
+    fertilizingIntervalDays: number | null
+    humidityMax: number | null
+    humidityMin: number | null
+    lastFertilizedAt: Date | null
+    lastRepottedAt: Date | null
+    lightLevel: string | null
+    nextFertilizingAt: Date | null
+    nextRepottingAt: Date | null
+    potSize: string | null
+    potType: string | null
+    soilType: string | null
+    temperatureMax: number | null
+    temperatureMin: number | null
+    wateringAmountMl: number | null
+    wateringNotes: string | null
+    wateringIntervalDays: number | null
+    wateringIntervalSummerDays: number | null
+    wateringIntervalWinterDays: number | null
+    wateringIntervalSpringDays: number | null
+    wateringIntervalAutumnDays: number | null
+    location: string | null
   }, ExtArgs["result"]["userPlant"]>
   composites: {}
 }
@@ -3005,12 +3005,12 @@ readonly fields: UserPlantFieldRefs;
  */
 export interface Prisma__UserPlantClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  careEvents<T extends Prisma.UserPlant$careEventsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$careEventsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlantCareEventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  plantDiagnosis<T extends Prisma.UserPlant$plantDiagnosisArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlantDiagnosisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  reminders<T extends Prisma.UserPlant$remindersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$remindersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReminderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   plantType<T extends Prisma.UserPlant$plantTypeArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$plantTypeArgs<ExtArgs>>): Prisma.Prisma__PlantTypeClient<runtime.Types.Result.GetResult<Prisma.$PlantTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   wateringLogs<T extends Prisma.UserPlant$wateringLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$wateringLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WateringLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  careEvents<T extends Prisma.UserPlant$careEventsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$careEventsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlantCareEventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  reminders<T extends Prisma.UserPlant$remindersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$remindersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReminderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  plantDiagnosis<T extends Prisma.UserPlant$plantDiagnosisArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPlant$plantDiagnosisArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlantDiagnosisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3042,35 +3042,35 @@ export interface Prisma__UserPlantClient<T, Null = never, ExtArgs extends runtim
 export interface UserPlantFieldRefs {
   readonly id: Prisma.FieldRef<"UserPlant", 'String'>
   readonly nickname: Prisma.FieldRef<"UserPlant", 'String'>
-  readonly plantName: Prisma.FieldRef<"UserPlant", 'String'>
-  readonly location: Prisma.FieldRef<"UserPlant", 'String'>
-  readonly photoUrl: Prisma.FieldRef<"UserPlant", 'String'>
   readonly plantTypeId: Prisma.FieldRef<"UserPlant", 'String'>
   readonly userId: Prisma.FieldRef<"UserPlant", 'String'>
   readonly lastWateredAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
   readonly nextWateringAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
-  readonly wateringIntervalDays: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly wateringIntervalSpringDays: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly wateringIntervalSummerDays: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly wateringIntervalAutumnDays: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly wateringIntervalWinterDays: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly lightLevel: Prisma.FieldRef<"UserPlant", 'String'>
-  readonly temperatureMin: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly temperatureMax: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly humidityMin: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly humidityMax: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly potType: Prisma.FieldRef<"UserPlant", 'String'>
-  readonly potSize: Prisma.FieldRef<"UserPlant", 'String'>
-  readonly soilType: Prisma.FieldRef<"UserPlant", 'String'>
-  readonly lastRepottedAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
-  readonly nextRepottingAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
-  readonly wateringAmountMl: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly wateringNotes: Prisma.FieldRef<"UserPlant", 'String'>
-  readonly fertilizingIntervalDays: Prisma.FieldRef<"UserPlant", 'Int'>
-  readonly lastFertilizedAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
-  readonly nextFertilizingAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
+  readonly photoUrl: Prisma.FieldRef<"UserPlant", 'String'>
+  readonly plantName: Prisma.FieldRef<"UserPlant", 'String'>
+  readonly fertilizingIntervalDays: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly humidityMax: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly humidityMin: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly lastFertilizedAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
+  readonly lastRepottedAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
+  readonly lightLevel: Prisma.FieldRef<"UserPlant", 'String'>
+  readonly nextFertilizingAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
+  readonly nextRepottingAt: Prisma.FieldRef<"UserPlant", 'DateTime'>
+  readonly potSize: Prisma.FieldRef<"UserPlant", 'String'>
+  readonly potType: Prisma.FieldRef<"UserPlant", 'String'>
+  readonly soilType: Prisma.FieldRef<"UserPlant", 'String'>
+  readonly temperatureMax: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly temperatureMin: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly wateringAmountMl: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly wateringNotes: Prisma.FieldRef<"UserPlant", 'String'>
+  readonly wateringIntervalDays: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly wateringIntervalSummerDays: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly wateringIntervalWinterDays: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly wateringIntervalSpringDays: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly wateringIntervalAutumnDays: Prisma.FieldRef<"UserPlant", 'Int'>
+  readonly location: Prisma.FieldRef<"UserPlant", 'String'>
 }
     
 
@@ -3472,6 +3472,78 @@ export type UserPlantDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Int
 }
 
 /**
+ * UserPlant.careEvents
+ */
+export type UserPlant$careEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PlantCareEvent
+   */
+  select?: Prisma.PlantCareEventSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PlantCareEvent
+   */
+  omit?: Prisma.PlantCareEventOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PlantCareEventInclude<ExtArgs> | null
+  where?: Prisma.PlantCareEventWhereInput
+  orderBy?: Prisma.PlantCareEventOrderByWithRelationInput | Prisma.PlantCareEventOrderByWithRelationInput[]
+  cursor?: Prisma.PlantCareEventWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PlantCareEventScalarFieldEnum | Prisma.PlantCareEventScalarFieldEnum[]
+}
+
+/**
+ * UserPlant.plantDiagnosis
+ */
+export type UserPlant$plantDiagnosisArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PlantDiagnosis
+   */
+  select?: Prisma.PlantDiagnosisSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PlantDiagnosis
+   */
+  omit?: Prisma.PlantDiagnosisOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PlantDiagnosisInclude<ExtArgs> | null
+  where?: Prisma.PlantDiagnosisWhereInput
+  orderBy?: Prisma.PlantDiagnosisOrderByWithRelationInput | Prisma.PlantDiagnosisOrderByWithRelationInput[]
+  cursor?: Prisma.PlantDiagnosisWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PlantDiagnosisScalarFieldEnum | Prisma.PlantDiagnosisScalarFieldEnum[]
+}
+
+/**
+ * UserPlant.reminders
+ */
+export type UserPlant$remindersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Reminder
+   */
+  select?: Prisma.ReminderSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Reminder
+   */
+  omit?: Prisma.ReminderOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ReminderInclude<ExtArgs> | null
+  where?: Prisma.ReminderWhereInput
+  orderBy?: Prisma.ReminderOrderByWithRelationInput | Prisma.ReminderOrderByWithRelationInput[]
+  cursor?: Prisma.ReminderWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ReminderScalarFieldEnum | Prisma.ReminderScalarFieldEnum[]
+}
+
+/**
  * UserPlant.plantType
  */
 export type UserPlant$plantTypeArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3512,78 +3584,6 @@ export type UserPlant$wateringLogsArgs<ExtArgs extends runtime.Types.Extensions.
   take?: number
   skip?: number
   distinct?: Prisma.WateringLogScalarFieldEnum | Prisma.WateringLogScalarFieldEnum[]
-}
-
-/**
- * UserPlant.careEvents
- */
-export type UserPlant$careEventsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PlantCareEvent
-   */
-  select?: Prisma.PlantCareEventSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the PlantCareEvent
-   */
-  omit?: Prisma.PlantCareEventOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PlantCareEventInclude<ExtArgs> | null
-  where?: Prisma.PlantCareEventWhereInput
-  orderBy?: Prisma.PlantCareEventOrderByWithRelationInput | Prisma.PlantCareEventOrderByWithRelationInput[]
-  cursor?: Prisma.PlantCareEventWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PlantCareEventScalarFieldEnum | Prisma.PlantCareEventScalarFieldEnum[]
-}
-
-/**
- * UserPlant.reminders
- */
-export type UserPlant$remindersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Reminder
-   */
-  select?: Prisma.ReminderSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Reminder
-   */
-  omit?: Prisma.ReminderOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ReminderInclude<ExtArgs> | null
-  where?: Prisma.ReminderWhereInput
-  orderBy?: Prisma.ReminderOrderByWithRelationInput | Prisma.ReminderOrderByWithRelationInput[]
-  cursor?: Prisma.ReminderWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ReminderScalarFieldEnum | Prisma.ReminderScalarFieldEnum[]
-}
-
-/**
- * UserPlant.plantDiagnosis
- */
-export type UserPlant$plantDiagnosisArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PlantDiagnosis
-   */
-  select?: Prisma.PlantDiagnosisSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the PlantDiagnosis
-   */
-  omit?: Prisma.PlantDiagnosisOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PlantDiagnosisInclude<ExtArgs> | null
-  where?: Prisma.PlantDiagnosisWhereInput
-  orderBy?: Prisma.PlantDiagnosisOrderByWithRelationInput | Prisma.PlantDiagnosisOrderByWithRelationInput[]
-  cursor?: Prisma.PlantDiagnosisWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PlantDiagnosisScalarFieldEnum | Prisma.PlantDiagnosisScalarFieldEnum[]
 }
 
 /**

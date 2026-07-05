@@ -8,7 +8,11 @@ import pg from 'pg'
 export class PrismaService extends PrismaClient implements OnModuleInit {
   constructor(configService: ConfigService) {
     const databaseUrl = configService.getOrThrow<string>('DATABASE_URL')
-    const pool = new pg.Pool({ connectionString: databaseUrl })
+    const databaseSsl = configService.get<string>('DATABASE_SSL') === 'true'
+    const pool = new pg.Pool({
+      connectionString: databaseUrl,
+      ssl: databaseSsl ? { rejectUnauthorized: false } : undefined
+    })
     const adapter = new PrismaPg(pool)
     super({ adapter })
   }
